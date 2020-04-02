@@ -39,6 +39,9 @@ obj*/
 *.plist
 
 # Specific Source build products
+lib/
+hl2/
+platform/
 intermediate/
 bin/
 src/.vs
