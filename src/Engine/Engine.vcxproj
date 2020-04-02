@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{EA51F5C7-6A3E-44E1-99AA-70E0FF88135D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>ENGINE_DLL;WIN32;_DEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\common;$(Inc)tier0;$(Inc)tier1;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Wininet.lib;Winmm.lib;Rpcrt4.lib;dsound.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>ENGINE_DLL;_DEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\common;$(Inc)tier0;$(Inc)tier1;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Wininet.lib;Winmm.lib;Rpcrt4.lib;dsound.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>ENGINE_DLL;WIN32;NDEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\common;$(Inc)tier0;$(Inc)tier1;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Wininet.lib;Winmm.lib;Rpcrt4.lib;dsound.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>ENGINE_DLL;NDEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\common;$(Inc)tier0;$(Inc)tier1;audio;audio\private;audio\public;..\vgui2\include;..\vgui2\controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;Wininet.lib;Winmm.lib;Rpcrt4.lib;dsound.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\language.cpp" />
+    <ClCompile Include="..\common\netmessages.cpp" />
+    <ClCompile Include="..\common\randoverride.cpp" />
+    <ClCompile Include="..\common\SourceAppInfo.cpp" />
+    <ClCompile Include="..\common\steamid.cpp" />
+    <ClCompile Include="..\common\vgui\vgui_basebudgetpanel.cpp" />
+    <ClCompile Include="..\common\vgui\vgui_budgetbargraphpanel.cpp" />
+    <ClCompile Include="..\common\vgui\vgui_budgethistorypanel.cpp" />
+    <ClCompile Include="..\common\vgui\vgui_budgetpanelshared.cpp" />
+    <ClCompile Include="..\..\include\blockingudpsocket.cpp" />
+    <ClCompile Include="..\..\include\bsptreedata.cpp" />
+    <ClCompile Include="..\..\include\builddisp.cpp" />
+    <ClCompile Include="..\..\include\collisionutils.cpp" />
+    <ClCompile Include="..\..\include\crtmemdebug.cpp" />
+    <ClCompile Include="..\..\include\dispcoll_common.cpp" />
+    <ClCompile Include="..\..\include\disp_common.cpp" />
+    <ClCompile Include="..\..\include\disp_powerinfo.cpp" />
+    <ClCompile Include="..\..\include\dt_recv.cpp" />
+    <ClCompile Include="..\..\include\dt_send.cpp" />
+    <ClCompile Include="..\..\include\dt_utlvector_common.cpp" />
+    <ClCompile Include="..\..\include\dt_utlvector_recv.cpp" />
+    <ClCompile Include="..\..\include\dt_utlvector_send.cpp" />
+    <ClCompile Include="..\..\include\editor_sendcommand.cpp" />
+    <ClCompile Include="..\..\include\filesystem_helpers.cpp" />
+    <ClCompile Include="..\..\include\filesystem_init.cpp" />
+    <ClCompile Include="..\..\include\lumpfiles.cpp" />
+    <ClCompile Include="..\..\include\networkvar.cpp" />
+    <ClCompile Include="..\..\include\registry.cpp" />
+    <ClCompile Include="..\..\include\scratchpad3d.cpp" />
+    <ClCompile Include="..\..\include\sentence.cpp" />
+    <ClCompile Include="..\..\include\studio.cpp" />
+    <ClCompile Include="..\..\include\tier0\memoverride.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\include\vallocator.cpp" />
+    <ClCompile Include="..\..\include\vgui_controls\vgui_controls.cpp" />
+    <ClCompile Include="..\..\include\XUnzip.cpp" />
+    <ClCompile Include="..\..\include\XZip.cpp" />
+    <ClCompile Include="audio\audio_pch.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\engine\audio\public;..\engine\audio\private;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\engine\audio\public;..\engine\audio\private;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\circularbuffer.cpp" />
+    <ClCompile Include="audio\private\MPAFile.cpp" />
+    <ClCompile Include="audio\private\MPAHeader.cpp" />
+    <ClCompile Include="audio\private\snd_dev_common.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_dev_direct.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_dev_wave.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_dma.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_dsp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_mix.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_mp3_source.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_sentence_mixer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_data.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_mixer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_mixer_adpcm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_mixer_mp3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_source.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_wave_temp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\snd_win.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\VBRHeader.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice_gain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice_mixer_controls.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice_record_dsound.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice_sound_engine_interface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="audio\private\voice_wavefile.cpp" />
+    <ClCompile Include="audio\private\vox.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">audio_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)audio_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="baseautocompletefilelist.cpp" />
+    <ClCompile Include="baseclient.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="baseclientstate.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="baseserver.cpp" />
+    <ClCompile Include="bitbuf_errorhandler.cpp" />
+    <ClCompile Include="bugreporter.cpp" />
+    <ClCompile Include="buildcubemaps.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="buildnum.cpp" />
+    <ClCompile Include="cbenchmark.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cdll_engine_int.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="changeframelist.cpp" />
+    <ClCompile Include="cheatcodes.cpp" />
+    <ClCompile Include="checksum_engine.cpp" />
+    <ClCompile Include="client.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="clientframe.cpp" />
+    <ClCompile Include="client_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="clockdriftmgr.cpp" />
+    <ClCompile Include="cl_bounded_cvars.cpp" />
+    <ClCompile Include="cl_demo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demoaction.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demoactioneditors.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demoactionmanager.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demoaction_types.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demoeditorpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demosmootherpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_demouipanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_entityreport.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_ents_parse.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_localnetworkbackdoor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_main.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_null.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_parse_event.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_pluginhelpers.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_pred.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_rcon.cpp" />
+    <ClCompile Include="cl_steamauth.cpp" />
+    <ClCompile Include="cl_texturelistpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cl_txviewpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cmd.cpp" />
+    <ClCompile Include="cmodel.cpp" />
+    <ClCompile Include="cmodel_bsp.cpp" />
+    <ClCompile Include="cmodel_disp.cpp" />
+    <ClCompile Include="colorcorrectionpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="console.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="cvar.cpp" />
+    <ClCompile Include="debugoverlay.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="debug_leafvis.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="decals.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="decal_clip.cpp" />
+    <ClCompile Include="demofile.cpp" />
+    <ClCompile Include="DevShotGenerator.cpp" />
+    <ClCompile Include="disp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="disp_defs.cpp" />
+    <ClCompile Include="disp_helpers.cpp" />
+    <ClCompile Include="disp_interface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="disp_mapload.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="download.cpp" />
+    <ClCompile Include="DownloadListGenerator.cpp" />
+    <ClCompile Include="downloadthread.cpp" />
+    <ClCompile Include="dt.cpp" />
+    <ClCompile Include="dt_common_eng.cpp" />
+    <ClCompile Include="dt_encode.cpp" />
+    <ClCompile Include="dt_instrumentation.cpp" />
+    <ClCompile Include="dt_instrumentation_server.cpp" />
+    <ClCompile Include="dt_localtransfer.cpp" />
+    <ClCompile Include="dt_recv_decoder.cpp" />
+    <ClCompile Include="dt_recv_eng.cpp" />
+    <ClCompile Include="dt_send_eng.cpp" />
+    <ClCompile Include="dt_stack.cpp" />
+    <ClCompile Include="dt_test.cpp" />
+    <ClCompile Include="enginesingleuserfilter.cpp" />
+    <ClCompile Include="EngineSoundClient.cpp" />
+    <ClCompile Include="EngineSoundServer.cpp" />
+    <ClCompile Include="enginestats.cpp" />
+    <ClCompile Include="enginethreads.cpp" />
+    <ClCompile Include="enginetool.cpp" />
+    <ClCompile Include="enginetrace.cpp" />
+    <ClCompile Include="engsoundservice.cpp" />
+    <ClCompile Include="filesystem_engine.cpp" />
+    <ClCompile Include="filetransfermgr.cpp" />
+    <ClCompile Include="GameEventManager.cpp" />
+    <ClCompile Include="GameEventManagerOld.cpp" />
+    <ClCompile Include="gametrace_engine.cpp" />
+    <ClCompile Include="gl_draw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_drawlights.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_lightmap.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_matsysiface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_rlight.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_rmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_rmisc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_rsurf.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_screen.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_shader.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="gl_warp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="hltvclient.cpp" />
+    <ClCompile Include="hltvclientstate.cpp" />
+    <ClCompile Include="hltvdemo.cpp" />
+    <ClCompile Include="hltvserver.cpp" />
+    <ClCompile Include="hltvtest.cpp" />
+    <ClCompile Include="host.cpp" />
+    <ClCompile Include="host_cmd.cpp" />
+    <ClCompile Include="host_listmaps.cpp" />
+    <ClCompile Include="host_phonehome.cpp" />
+    <ClCompile Include="host_saverestore.cpp" />
+    <ClCompile Include="host_state.cpp" />
+    <ClCompile Include="initmathlib.cpp" />
+    <ClCompile Include="keys.cpp" />
+    <ClCompile Include="lightcache.cpp" />
+    <ClCompile Include="LoadScreenUpdate.cpp" />
+    <ClCompile Include="LocalNetworkBackdoor.cpp" />
+    <ClCompile Include="l_studio.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="MapReslistGenerator.cpp" />
+    <ClCompile Include="matchmakingclient.cpp" />
+    <ClCompile Include="matchmakinghost.cpp" />
+    <ClCompile Include="matchmakingmigrate.cpp" />
+    <ClCompile Include="matchmakingqos.cpp" />
+    <ClCompile Include="matchmakingshared.cpp" />
+    <ClCompile Include="materialproxyfactory.cpp" />
+    <ClCompile Include="matsys_interface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="mem_fgets.cpp" />
+    <ClCompile Include="ModelInfo.cpp" />
+    <ClCompile Include="modelloader.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="mod_vis.cpp" />
+    <ClCompile Include="networkstringtable.cpp" />
+    <ClCompile Include="networkstringtableclient.cpp" />
+    <ClCompile Include="NetworkStringTableItem.cpp" />
+    <ClCompile Include="networkstringtableserver.cpp" />
+    <ClCompile Include="net_chan.cpp" />
+    <ClCompile Include="net_synctags.cpp" />
+    <ClCompile Include="net_ws.cpp" />
+    <ClCompile Include="net_ws_queued_packet_sender.cpp" />
+    <ClCompile Include="OcclusionSystem.cpp" />
+    <ClCompile Include="Overlay.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="packed_entity.cpp" />
+    <ClCompile Include="perfuipanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="precache.cpp" />
+    <ClCompile Include="pr_edict.cpp" />
+    <ClCompile Include="pure_server.cpp" />
+    <ClCompile Include="quakedef.cpp" />
+    <ClCompile Include="randomstream.cpp" />
+    <ClCompile Include="render_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="rpt_engine.cpp" />
+    <ClCompile Include="r_areaportal.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="r_decal.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="r_efx.cpp" />
+    <ClCompile Include="r_linefile.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="saverestore_filesystem.cpp" />
+    <ClCompile Include="servermsghandler.cpp" />
+    <ClCompile Include="server_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <ConformanceMode Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ConformanceMode>
+      <ConformanceMode Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ConformanceMode>
+      <ConformanceMode Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ConformanceMode>
+      <ConformanceMode Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ConformanceMode>
+    </ClCompile>
+    <ClCompile Include="Session.cpp" />
+    <ClCompile Include="shadowmgr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">render_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)render_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="snd_io.cpp" />
+    <ClCompile Include="socketcreator.cpp" />
+    <ClCompile Include="sound_shared.cpp" />
+    <ClCompile Include="spatialpartition.cpp" />
+    <ClCompile Include="staticpropmgr.cpp" />
+    <ClCompile Include="sv_client.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_ents_write.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_filter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_framesnapshot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_ipratelimit.cpp" />
+    <ClCompile Include="sv_log.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_main.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_master.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_master_legacy.cpp" />
+    <ClCompile Include="sv_packedentities.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_plugin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_precache.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_rcon.cpp" />
+    <ClCompile Include="sv_redirect.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_remoteaccess.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="sv_steamauth.cpp" />
+    <ClCompile Include="sv_uploaddata.cpp" />
+    <ClCompile Include="sv_uploadgamestats.cpp" />
+    <ClCompile Include="sys_dll.cpp" />
+    <ClCompile Include="sys_dll2.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/EHa %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sync</ExceptionHandling>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">/EHa %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Sync</ExceptionHandling>
+    </ClCompile>
+    <ClCompile Include="sys_engine.cpp" />
+    <ClCompile Include="sys_getmodes.cpp" />
+    <ClCompile Include="sys_mainwind.cpp" />
+    <ClCompile Include="testscriptmgr.cpp" />
+    <ClCompile Include="tmessage.cpp" />
+    <ClCompile Include="toolframework.cpp" />
+    <ClCompile Include="traceinit.cpp" />
+    <ClCompile Include="vengineserver_impl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">server_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_askconnectpanel.cpp" />
+    <ClCompile Include="vgui_basepanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_baseui_interface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_budgetpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_DebugSystemPanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_drawtreepanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_helpers.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_texturebudgetpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_vprofgraphpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="vgui_vprofpanel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">client_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)client_pch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="view.cpp" />
+    <ClCompile Include="voiceserver_impl.cpp" />
+    <ClCompile Include="vprof_engine.cpp" />
+    <ClCompile Include="vprof_record.cpp" />
+    <ClCompile Include="world.cpp" />
+    <ClCompile Include="xboxsystem.cpp" />
+    <ClCompile Include="zone.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClInclude Include="..\common\bugreporter\bugreporter.h" />
+    <ClInclude Include="..\common\cserserverprotocol_engine.h" />
+    <ClInclude Include="..\common\engine_launcher_api.h" />
+    <ClInclude Include="..\common\FindSteamServers.h" />
+    <ClInclude Include="..\common\GameUI\IGameConsole.h" />
+    <ClInclude Include="..\common\GameUI\IGameUI.h" />
+    <ClInclude Include="..\common\igameserverdata.h" />
+    <ClInclude Include="..\common\IVguiModule.h" />
+    <ClInclude Include="..\common\ivprofexport.h" />
+    <ClInclude Include="..\common\netmessages.h" />
+    <ClInclude Include="..\common\protocol.h" />
+    <ClInclude Include="..\common\proto_oob.h" />
+    <ClInclude Include="..\common\proto_version.h" />
+    <ClInclude Include="..\common\qlimits.h" />
+    <ClInclude Include="..\common\Steam.h" />
+    <ClInclude Include="..\common\SteamCommon.h" />
+    <ClInclude Include="..\common\SteamUserIDValidation.h" />
+    <ClInclude Include="..\common\SteamWriteMiniDump.h" />
+    <ClInclude Include="..\common\userid.h" />
+    <ClInclude Include="..\common\vgui\vgui_basebudgetpanel.h" />
+    <ClInclude Include="..\common\vgui\vgui_budgetbargraphpanel.h" />
+    <ClInclude Include="..\common\vgui\vgui_budgethistorypanel.h" />
+    <ClInclude Include="..\common\vgui\vgui_budgetpanelshared.h" />
+    <ClInclude Include="..\dx9sdk\Include\dinput.h" />
+    <ClInclude Include="..\gameui\GameUI_Interface.h" />
+    <ClInclude Include="..\..\include\appframework\IAppSystem.h" />
+    <ClInclude Include="..\..\include\basehandle.h" />
+    <ClInclude Include="..\..\include\bitvec.h" />
+    <ClInclude Include="..\..\include\blockingudpsocket.h" />
+    <ClInclude Include="..\..\include\bspfile.h" />
+    <ClInclude Include="..\..\include\bspflags.h" />
+    <ClInclude Include="..\..\include\bsptreedata.h" />
+    <ClInclude Include="..\..\include\builddisp.h" />
+    <ClInclude Include="..\..\include\cdll_int.h" />
+    <ClInclude Include="..\..\include\cdll_intv11.h" />
+    <ClInclude Include="..\..\include\cdll_intv12.h" />
+    <ClInclude Include="..\..\include\clientstats.h" />
+    <ClInclude Include="..\..\include\client_class.h" />
+    <ClInclude Include="..\..\include\client_render_handle.h" />
+    <ClInclude Include="..\..\include\client_textmessage.h" />
+    <ClInclude Include="..\..\include\cmodel.h" />
+    <ClInclude Include="..\..\include\collisionutils.h" />
+    <ClInclude Include="..\..\include\Color.h" />
+    <ClInclude Include="..\..\include\commonmacros.h" />
+    <ClInclude Include="..\..\include\const.h" />
+    <ClInclude Include="..\..\include\con_nprint.h" />
+    <ClInclude Include="..\..\include\coordsize.h" />
+    <ClInclude Include="..\..\include\crtmemdebug.h" />
+    <ClInclude Include="..\..\include\datamap.h" />
+    <ClInclude Include="..\..\include\dispcoll_common.h" />
+    <ClInclude Include="..\..\include\disp_common.h" />
+    <ClInclude Include="..\..\include\disp_powerinfo.h" />
+    <ClInclude Include="..\..\include\disp_tesselate.h" />
+    <ClInclude Include="..\..\include\disp_vertindex.h" />
+    <ClInclude Include="..\..\include\dlight.h" />
+    <ClInclude Include="..\..\include\dt_common.h" />
+    <ClInclude Include="..\..\include\dt_recv.h" />
+    <ClInclude Include="..\..\include\dt_send.h" />
+    <ClInclude Include="..\..\include\dt_utlvector_common.h" />
+    <ClInclude Include="..\..\include\dt_utlvector_recv.h" />
+    <ClInclude Include="..\..\include\dt_utlvector_send.h" />
+    <ClInclude Include="..\..\include\edict.h" />
+    <ClInclude Include="..\..\include\editor_sendcommand.h" />
+    <ClInclude Include="..\..\include\eiface.h" />
+    <ClInclude Include="..\..\include\eifaceV21.h" />
+    <ClInclude Include="..\..\include\engine\IClientLeafSystem.h" />
+    <ClInclude Include="..\..\include\engine\ICollideable.h" />
+    <ClInclude Include="..\..\include\engine\IEngineSound.h" />
+    <ClInclude Include="..\..\include\engine\IEngineTrace.h" />
+    <ClInclude Include="..\..\include\engine\imatchmaking.h" />
+    <ClInclude Include="..\..\include\engine\iserverplugin.h" />
+    <ClInclude Include="..\..\include\engine\ishadowmgr.h" />
+    <ClInclude Include="..\..\include\engine\IStaticPropMgr.h" />
+    <ClInclude Include="..\..\include\engine\ivdebugoverlay.h" />
+    <ClInclude Include="..\..\include\engine\IVEngineCache.h" />
+    <ClInclude Include="..\..\include\engine\ivmodelinfo.h" />
+    <ClInclude Include="..\..\include\engine\ivmodelrender.h" />
+    <ClInclude Include="..\..\include\engine\SndInfo.h" />
+    <ClInclude Include="..\..\include\engine_hlds_api.h" />
+    <ClInclude Include="..\..\include\event_flags.h" />
+    <ClInclude Include="..\..\include\filesystem.h" />
+    <ClInclude Include="..\..\include\filesystem_helpers.h" />
+    <ClInclude Include="..\..\include\gamebspfile.h" />
+    <ClInclude Include="..\..\include\gametrace.h" />
+    <ClInclude Include="..\..\include\globalvars_base.h" />
+    <ClInclude Include="..\..\include\ibsppack.h" />
+    <ClInclude Include="..\..\include\ibxmovietools.h" />
+    <ClInclude Include="..\..\include\iclient.h" />
+    <ClInclude Include="..\..\include\icliententity.h" />
+    <ClInclude Include="..\..\include\icliententitylist.h" />
+    <ClInclude Include="..\..\include\iclientnetworkable.h" />
+    <ClInclude Include="..\..\include\iclientrenderable.h" />
+    <ClInclude Include="..\..\include\iclientthinkable.h" />
+    <ClInclude Include="..\..\include\iclientunknown.h" />
+    <ClInclude Include="..\..\include\icvar.h" />
+    <ClInclude Include="..\..\include\idedicatedexports.h" />
+    <ClInclude Include="..\..\include\iefx.h" />
+    <ClInclude Include="..\..\include\ienginevgui.h" />
+    <ClInclude Include="..\..\include\igameevents.h" />
+    <ClInclude Include="..\..\include\IGameUIFuncs.h" />
+    <ClInclude Include="..\..\include\ihandleentity.h" />
+    <ClInclude Include="..\..\include\ihltv.h" />
+    <ClInclude Include="..\..\include\ihltvdirector.h" />
+    <ClInclude Include="..\..\include\inetchannel.h" />
+    <ClInclude Include="..\..\include\inetchannelinfo.h" />
+    <ClInclude Include="..\..\include\inetmessage.h" />
+    <ClInclude Include="..\..\include\inetmsghandler.h" />
+    <ClInclude Include="..\..\include\inetwork.h" />
+    <ClInclude Include="..\..\include\iprediction.h" />
+    <ClInclude Include="..\..\include\irecipientfilter.h" />
+    <ClInclude Include="..\..\include\iregistry.h" />
+    <ClInclude Include="..\..\include\isaverestore.h" />
+    <ClInclude Include="..\..\include\iscratchpad3d.h" />
+    <ClInclude Include="..\..\include\iserver.h" />
+    <ClInclude Include="..\..\include\iserverentity.h" />
+    <ClInclude Include="..\..\include\iservernetworkable.h" />
+    <ClInclude Include="..\..\include\iserverunknown.h" />
+    <ClInclude Include="..\..\include\ispatialpartition.h" />
+    <ClInclude Include="..\..\include\istudiorender.h" />
+    <ClInclude Include="..\..\include\ivguicenterprint.h" />
+    <ClInclude Include="..\..\include\ivoiceserver.h" />
+    <ClInclude Include="..\..\include\ivoicetweak.h" />
+    <ClInclude Include="..\..\include\ivrenderview.h" />
+    <ClInclude Include="..\..\include\ivtex.h" />
+    <ClInclude Include="..\..\include\jpeglib\jconfig.h" />
+    <ClInclude Include="..\..\include\jpeglib\jmorecfg.h" />
+    <ClInclude Include="..\..\include\jpeglib\jpeglib.h" />
+    <ClInclude Include="..\..\include\keydefs.h" />
+    <ClInclude Include="..\..\include\lumpfiles.h" />
+    <ClInclude Include="..\..\include\materialsystem\idebugtextureinfo.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterial.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialproxy.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialproxyfactory.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialsystem.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialsystemhardwareconfig.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialvar.h" />
+    <ClInclude Include="..\..\include\materialsystem\imesh.h" />
+    <ClInclude Include="..\..\include\materialsystem\itexture.h" />
+    <ClInclude Include="..\..\include\materialsystem\materialsystem_config.h" />
+    <ClInclude Include="..\..\include\mathlib\amd3dx.h" />
+    <ClInclude Include="..\..\include\mathlib\anorms.h" />
+    <ClInclude Include="..\..\include\mathlib\bumpvects.h" />
+    <ClInclude Include="..\..\include\mathlib\compressed_light_cube.h" />
+    <ClInclude Include="..\..\include\mathlib\compressed_vector.h" />
+    <ClInclude Include="..\..\include\mathlib\IceKey.H" />
+    <ClInclude Include="..\..\include\mathlib\mathlib.h" />
+    <ClInclude Include="..\..\include\mathlib\polyhedron.h" />
+    <ClInclude Include="..\..\include\mathlib\vector.h" />
+    <ClInclude Include="..\..\include\mathlib\vector2d.h" />
+    <ClInclude Include="..\..\include\mathlib\vector4d.h" />
+    <ClInclude Include="..\..\include\mathlib\vmatrix.h" />
+    <ClInclude Include="..\..\include\mathlib\vplane.h" />
+    <ClInclude Include="..\..\include\measure_section.h" />
+    <ClInclude Include="..\..\include\model_types.h" />
+    <ClInclude Include="..\..\include\modes.h" />
+    <ClInclude Include="..\..\include\mouthinfo.h" />
+    <ClInclude Include="..\..\include\networkstringtabledefs.h" />
+    <ClInclude Include="..\..\include\networkvar.h" />
+    <ClInclude Include="..\..\include\nmatrix.h" />
+    <ClInclude Include="..\..\include\nvector.h" />
+    <ClInclude Include="..\..\include\optimize.h" />
+    <ClInclude Include="..\..\include\overlaytext.h" />
+    <ClInclude Include="..\..\include\phyfile.h" />
+    <ClInclude Include="..\..\include\PlayerState.h" />
+    <ClInclude Include="..\..\include\protected_things.h" />
+    <ClInclude Include="..\..\include\r_efx.h" />
+    <ClInclude Include="..\..\include\s3_intrf.h" />
+    <ClInclude Include="..\..\include\savegame_version.h" />
+    <ClInclude Include="..\..\include\saverestoretypes.h" />
+    <ClInclude Include="..\..\include\scratchpad3d.h" />
+    <ClInclude Include="..\..\include\sentence.h" />
+    <ClInclude Include="..\..\include\server_class.h" />
+    <ClInclude Include="..\..\include\shake.h" />
+    <ClInclude Include="..\..\include\smooth_average.h" />
+    <ClInclude Include="..\..\include\soundchars.h" />
+    <ClInclude Include="..\..\include\soundflags.h" />
+    <ClInclude Include="..\..\include\soundinfo.h" />
+    <ClInclude Include="..\..\include\stdstring.h" />
+    <ClInclude Include="..\..\include\steam\isteamclient.h" />
+    <ClInclude Include="..\..\include\steam\isteamfriends.h" />
+    <ClInclude Include="..\..\include\steam\isteamgameserver.h" />
+    <ClInclude Include="..\..\include\steam\isteamuser.h" />
+    <ClInclude Include="..\..\include\steam\isteamuserstats.h" />
+    <ClInclude Include="..\..\include\steam\isteamutils.h" />
+    <ClInclude Include="..\..\include\steam\steamclientpublic.h" />
+    <ClInclude Include="..\..\include\steam\steamtypes.h" />
+    <ClInclude Include="..\..\include\steam\steam_api.h" />
+    <ClInclude Include="..\..\include\steam\steam_gameserver.h" />
+    <ClInclude Include="..\..\include\steam\steam_utils.h" />
+    <ClInclude Include="..\..\include\string_t.h" />
+    <ClInclude Include="..\..\include\studio.h" />
+    <ClInclude Include="..\..\include\surfinfo.h" />
+    <ClInclude Include="..\..\include\texture_group_names.h" />
+    <ClInclude Include="..\..\include\tier0\basetypes.h" />
+    <ClInclude Include="..\..\include\tier0\dbg.h" />
+    <ClInclude Include="..\..\include\tier0\fasttimer.h" />
+    <ClInclude Include="..\..\include\tier0\l2cache.h" />
+    <ClInclude Include="..\..\include\tier0\mem.h" />
+    <ClInclude Include="..\..\include\tier0\memalloc.h" />
+    <ClInclude Include="..\..\include\tier0\memdbgoff.h" />
+    <ClInclude Include="..\..\include\tier0\memdbgon.h" />
+    <ClInclude Include="..\..\include\tier0\platform.h" />
+    <ClInclude Include="..\..\include\tier0\vcrmode.h" />
+    <ClInclude Include="..\..\include\tier0\vcr_shared.h" />
+    <ClInclude Include="..\..\include\tier0\vprof.h" />
+    <ClInclude Include="..\..\include\tier1\bitbuf.h" />
+    <ClInclude Include="..\..\include\tier1\characterset.h" />
+    <ClInclude Include="..\..\include\tier1\checksum_crc.h" />
+    <ClInclude Include="..\..\include\tier1\checksum_md5.h" />
+    <ClInclude Include="..\..\include\tier1\convar.h" />
+    <ClInclude Include="..\..\include\tier1\datalru.h" />
+    <ClInclude Include="..\..\include\tier1\fmtstr.h" />
+    <ClInclude Include="..\..\include\tier1\interface.h" />
+    <ClInclude Include="..\..\include\tier1\KeyValues.h" />
+    <ClInclude Include="..\..\include\tier1\mempool.h" />
+    <ClInclude Include="..\..\include\tier1\memstack.h" />
+    <ClInclude Include="..\..\include\tier1\netadr.h" />
+    <ClInclude Include="..\..\include\tier1\smartptr.h" />
+    <ClInclude Include="..\..\include\tier1\utlbidirectionalset.h" />
+    <ClInclude Include="..\..\include\tier1\utlbuffer.h" />
+    <ClInclude Include="..\..\include\tier1\utldict.h" />
+    <ClInclude Include="..\..\include\tier1\utlfixedlinkedlist.h" />
+    <ClInclude Include="..\..\include\tier1\utlfixedmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlhash.h" />
+    <ClInclude Include="..\..\include\tier1\utllinkedlist.h" />
+    <ClInclude Include="..\..\include\tier1\utlmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlmultilist.h" />
+    <ClInclude Include="..\..\include\tier1\utlrbtree.h" />
+    <ClInclude Include="..\..\include\tier1\UtlSortVector.h" />
+    <ClInclude Include="..\..\include\tier1\utlsymbol.h" />
+    <ClInclude Include="..\..\include\tier1\utlvector.h" />
+    <ClInclude Include="..\..\include\toolframework\iclientenginetools.h" />
+    <ClInclude Include="..\..\include\toolframework\ienginetool.h" />
+    <ClInclude Include="..\..\include\toolframework\iserverenginetools.h" />
+    <ClInclude Include="..\..\include\toolframework\itooldictionary.h" />
+    <ClInclude Include="..\..\include\toolframework\itoolentity.h" />
+    <ClInclude Include="..\..\include\toolframework\itoolframework.h" />
+    <ClInclude Include="..\..\include\toolframework\itoolsystem.h" />
+    <ClInclude Include="..\..\include\trace.h" />
+    <ClInclude Include="..\..\include\unicode\unicode.h" />
+    <ClInclude Include="..\..\include\UtlCachedFileData.h" />
+    <ClInclude Include="..\..\include\vallocator.h" />
+    <ClInclude Include="..\..\include\vaudio\ivaudio.h" />
+    <ClInclude Include="..\..\include\vcollide.h" />
+    <ClInclude Include="..\..\include\vcollide_parse.h" />
+    <ClInclude Include="..\..\include\VGuiMatSurface\IMatSystemSurface.h" />
+    <ClInclude Include="..\..\include\vgui\Cursor.h" />
+    <ClInclude Include="..\..\include\vgui\Dar.h" />
+    <ClInclude Include="..\..\include\vgui\IClientPanel.h" />
+    <ClInclude Include="..\..\include\vgui\IHTML.h" />
+    <ClInclude Include="..\..\include\vgui\IImage.h" />
+    <ClInclude Include="..\..\include\vgui\IInput.h" />
+    <ClInclude Include="..\..\include\vgui\ILocalize.h" />
+    <ClInclude Include="..\..\include\vgui\IPanel.h" />
+    <ClInclude Include="..\..\include\vgui\IScheme.h" />
+    <ClInclude Include="..\..\include\vgui\ISurface.h" />
+    <ClInclude Include="..\..\include\vgui\ISystem.h" />
+    <ClInclude Include="..\..\include\vgui\IVGui.h" />
+    <ClInclude Include="..\..\include\vgui\KeyCode.h" />
+    <ClInclude Include="..\..\include\vgui\MessageMap.h" />
+    <ClInclude Include="..\..\include\vgui\MouseCode.h" />
+    <ClInclude Include="..\..\include\vgui\VGUI.h" />
+    <ClInclude Include="..\..\include\vgui_controls\AnalogBar.h" />
+    <ClInclude Include="..\..\include\vgui_controls\AnimationController.h" />
+    <ClInclude Include="..\..\include\vgui_controls\BuildGroup.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Button.h" />
+    <ClInclude Include="..\..\include\vgui_controls\CheckButton.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ComboBox.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Controls.h" />
+    <ClInclude Include="..\..\include\vgui_controls\EditablePanel.h" />
+    <ClInclude Include="..\..\include\vgui_controls\FileOpenDialog.h" />
+    <ClInclude Include="..\..\include\vgui_controls\FocusNavGroup.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Frame.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Image.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ImageList.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Label.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ListPanel.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Menu.h" />
+    <ClInclude Include="..\..\include\vgui_controls\MenuButton.h" />
+    <ClInclude Include="..\..\include\vgui_controls\MenuItem.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Panel.h" />
+    <ClInclude Include="..\..\include\vgui_controls\PanelAnimationVar.h" />
+    <ClInclude Include="..\..\include\vgui_controls\PHandle.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ProgressBar.h" />
+    <ClInclude Include="..\..\include\vgui_controls\PropertyDialog.h" />
+    <ClInclude Include="..\..\include\vgui_controls\PropertyPage.h" />
+    <ClInclude Include="..\..\include\vgui_controls\PropertySheet.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ScrollBar.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Slider.h" />
+    <ClInclude Include="..\..\include\vgui_controls\TextEntry.h" />
+    <ClInclude Include="..\..\include\vgui_controls\TextImage.h" />
+    <ClInclude Include="..\..\include\vgui_controls\ToggleButton.h" />
+    <ClInclude Include="..\..\include\vgui_controls\Tooltip.h" />
+    <ClInclude Include="..\..\include\vgui_controls\TreeView.h" />
+    <ClInclude Include="..\..\include\vgui_controls\TreeViewListControl.h" />
+    <ClInclude Include="..\..\include\view_shared.h" />
+    <ClInclude Include="..\..\include\vphysics_interface.h" />
+    <ClInclude Include="..\..\include\vstdlib\ICommandLine.h" />
+    <ClInclude Include="..\..\include\vstdlib\IKeyValuesSystem.h" />
+    <ClInclude Include="..\..\include\vstdlib\random.h" />
+    <ClInclude Include="..\..\include\vstdlib\strtools.h" />
+    <ClInclude Include="..\..\include\vstdlib\vstdlib.h" />
+    <ClInclude Include="..\..\include\vtf\vtf.h" />
+    <ClInclude Include="..\..\include\worldsize.h" />
+    <ClInclude Include="..\..\include\xwvfile.h" />
+    <ClInclude Include="..\..\include\zip\XZip.h" />
+    <ClInclude Include="..\..\include\zip_uncompressed.h" />
+    <ClInclude Include="audio\audio_pch.h" />
+    <ClInclude Include="audio\private\circularbuffer.h" />
+    <ClInclude Include="audio\private\eax.h" />
+    <ClInclude Include="audio\private\MPAFile.h" />
+    <ClInclude Include="audio\private\MPAHeader.h" />
+    <ClInclude Include="audio\private\snd_channels.h" />
+    <ClInclude Include="audio\private\snd_convars.h" />
+    <ClInclude Include="audio\private\snd_dev_common.h" />
+    <ClInclude Include="audio\private\snd_dev_direct.h" />
+    <ClInclude Include="audio\private\snd_dev_wave.h" />
+    <ClInclude Include="audio\private\snd_dev_xaudio.h" />
+    <ClInclude Include="audio\private\snd_dma.h" />
+    <ClInclude Include="audio\private\snd_env_fx.h" />
+    <ClInclude Include="audio\private\snd_fixedint.h" />
+    <ClInclude Include="audio\private\snd_mix_buf.h" />
+    <ClInclude Include="audio\private\snd_mp3_source.h" />
+    <ClInclude Include="audio\private\snd_sfx.h" />
+    <ClInclude Include="audio\private\snd_wave_data.h" />
+    <ClInclude Include="audio\private\snd_wave_mixer.h" />
+    <ClInclude Include="audio\private\snd_wave_mixer_adpcm.h" />
+    <ClInclude Include="audio\private\snd_wave_mixer_private.h" />
+    <ClInclude Include="audio\private\snd_wave_mixer_xma.h" />
+    <ClInclude Include="audio\private\snd_wave_source.h" />
+    <ClInclude Include="audio\private\snd_wave_temp.h" />
+    <ClInclude Include="audio\private\sound_private.h" />
+    <ClInclude Include="audio\private\VBRHeader.h" />
+    <ClInclude Include="audio\private\voice_gain.h" />
+    <ClInclude Include="audio\private\voice_mixer_controls.h" />
+    <ClInclude Include="audio\private\voice_sound_engine_interface.h" />
+    <ClInclude Include="audio\private\voice_wavefile.h" />
+    <ClInclude Include="audio\private\vox_private.h" />
+    <ClInclude Include="audio\public\ivoicecodec.h" />
+    <ClInclude Include="audio\public\ivoicerecord.h" />
+    <ClInclude Include="audio\public\snd_audio_source.h" />
+    <ClInclude Include="audio\public\snd_device.h" />
+    <ClInclude Include="audio\public\snd_io.h" />
+    <ClInclude Include="audio\public\sound.h" />
+    <ClInclude Include="audio\public\soundservice.h" />
+    <ClInclude Include="audio\public\voice.h" />
+    <ClInclude Include="audio\public\vox.h" />
+    <ClInclude Include="baseautocompletefilelist.h" />
+    <ClInclude Include="baseclient.h" />
+    <ClInclude Include="baseclientstate.h" />
+    <ClInclude Include="baseserver.h" />
+    <ClInclude Include="bitbuf_errorhandler.h" />
+    <ClInclude Include="cbenchmark.h" />
+    <ClInclude Include="cdll_engine_int.h" />
+    <ClInclude Include="changeframelist.h" />
+    <ClInclude Include="cheatcodes.h" />
+    <ClInclude Include="checksum_engine.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="clientframe.h" />
+    <ClInclude Include="clockdriftmgr.h" />
+    <ClInclude Include="cl_demo.h" />
+    <ClInclude Include="cl_demoaction.h" />
+    <ClInclude Include="cl_demoactioneditors.h" />
+    <ClInclude Include="cl_demoactionmanager.h" />
+    <ClInclude Include="cl_demoaction_types.h" />
+    <ClInclude Include="cl_demoeditorpanel.h" />
+    <ClInclude Include="cl_demosmootherpanel.h" />
+    <ClInclude Include="cl_demosmoothing.h" />
+    <ClInclude Include="cl_demouipanel.h" />
+    <ClInclude Include="cl_entityreport.h" />
+    <ClInclude Include="cl_ents_parse.h" />
+    <ClInclude Include="cl_localnetworkbackdoor.h" />
+    <ClInclude Include="cl_main.h" />
+    <ClInclude Include="cl_parse_event.h" />
+    <ClInclude Include="cl_pluginhelpers.h" />
+    <ClInclude Include="cl_pred.h" />
+    <ClInclude Include="cl_rcon.h" />
+    <ClInclude Include="cl_steamauth.h" />
+    <ClInclude Include="cl_texturelistpanel.h" />
+    <ClInclude Include="cl_txviewpanel.h" />
+    <ClInclude Include="cmd.h" />
+    <ClInclude Include="cmodel_engine.h" />
+    <ClInclude Include="cmodel_private.h" />
+    <ClInclude Include="ColorQuant.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="conprint.h" />
+    <ClInclude Include="conproc.h" />
+    <ClInclude Include="console.h" />
+    <ClInclude Include="cvar.h" />
+    <ClInclude Include="debugoverlay.h" />
+    <ClInclude Include="debug_leafvis.h" />
+    <ClInclude Include="decal.h" />
+    <ClInclude Include="decal_clip.h" />
+    <ClInclude Include="decal_private.h" />
+    <ClInclude Include="demo.h" />
+    <ClInclude Include="demofile.h" />
+    <ClInclude Include="DevShotGenerator.h" />
+    <ClInclude Include="disp.h" />
+    <ClInclude Include="dispnode.h" />
+    <ClInclude Include="disp_defs.h" />
+    <ClInclude Include="disp_helpers.h" />
+    <ClInclude Include="download.h" />
+    <ClInclude Include="DownloadListGenerator.h" />
+    <ClInclude Include="download_internal.h" />
+    <ClInclude Include="draw.h" />
+    <ClInclude Include="dt.h" />
+    <ClInclude Include="dt_common_eng.h" />
+    <ClInclude Include="dt_encode.h" />
+    <ClInclude Include="dt_instrumentation.h" />
+    <ClInclude Include="dt_instrumentation_server.h" />
+    <ClInclude Include="dt_localtransfer.h" />
+    <ClInclude Include="dt_recv_decoder.h" />
+    <ClInclude Include="dt_recv_eng.h" />
+    <ClInclude Include="dt_send_eng.h" />
+    <ClInclude Include="dt_stack.h" />
+    <ClInclude Include="dt_test.h" />
+    <ClInclude Include="enginebugreporter.h" />
+    <ClInclude Include="engineperftools.h" />
+    <ClInclude Include="enginesingleuserfilter.h" />
+    <ClInclude Include="EngineSoundInternal.h" />
+    <ClInclude Include="enginestats.h" />
+    <ClInclude Include="enginetrace.h" />
+    <ClInclude Include="ents_shared.h" />
+    <ClInclude Include="event_system.h" />
+    <ClInclude Include="filesystem_engine.h" />
+    <ClInclude Include="filetransfermgr.h" />
+    <ClInclude Include="filter.h" />
+    <ClInclude Include="framesnapshot.h" />
+    <ClInclude Include="GameEventManager.h" />
+    <ClInclude Include="getintersectingsurfaces_struct.h" />
+    <ClInclude Include="gl_cvars.h" />
+    <ClInclude Include="gl_drawlights.h" />
+    <ClInclude Include="gl_hw.h" />
+    <ClInclude Include="gl_lightmap.h" />
+    <ClInclude Include="gl_matsysiface.h" />
+    <ClInclude Include="gl_model.h" />
+    <ClInclude Include="gl_model_private.h" />
+    <ClInclude Include="gl_rmain.h" />
+    <ClInclude Include="gl_rsurf.h" />
+    <ClInclude Include="gl_shader.h" />
+    <ClInclude Include="gl_shaderutil.h" />
+    <ClInclude Include="gl_water.h" />
+    <ClInclude Include="hltvclient.h" />
+    <ClInclude Include="hltvclientstate.h" />
+    <ClInclude Include="hltvdemo.h" />
+    <ClInclude Include="hltvserver.h" />
+    <ClInclude Include="hltvtest.h" />
+    <ClInclude Include="host.h" />
+    <ClInclude Include="host_cmd.h" />
+    <ClInclude Include="host_jmp.h" />
+    <ClInclude Include="host_phonehome.h" />
+    <ClInclude Include="host_saverestore.h" />
+    <ClInclude Include="host_state.h" />
+    <ClInclude Include="icolorcorrectiontools.h" />
+    <ClInclude Include="idispinfo.h" />
+    <ClInclude Include="iengine.h" />
+    <ClInclude Include="ienginetoolinternal.h" />
+    <ClInclude Include="igame.h" />
+    <ClInclude Include="IOcclusionSystem.h" />
+    <ClInclude Include="ispatialpartitioninternal.h" />
+    <ClInclude Include="ithread.h" />
+    <ClInclude Include="ivideomode.h" />
+    <ClInclude Include="keys.h" />
+    <ClInclude Include="lightcache.h" />
+    <ClInclude Include="LoadScreenUpdate.h" />
+    <ClInclude Include="LocalNetworkBackdoor.h" />
+    <ClInclude Include="logofile_shared.h" />
+    <ClInclude Include="lowpassstream.h" />
+    <ClInclude Include="l_studio.h" />
+    <ClInclude Include="MapReslistGenerator.h" />
+    <ClInclude Include="master.h" />
+    <ClInclude Include="matchmaking.h" />
+    <ClInclude Include="matchmakingqos.h" />
+    <ClInclude Include="MaterialBuckets.h" />
+    <ClInclude Include="materialproxyfactory.h" />
+    <ClInclude Include="mem.h" />
+    <ClInclude Include="mem_fgets.h" />
+    <ClInclude Include="ModelInfo.h" />
+    <ClInclude Include="modelloader.h" />
+    <ClInclude Include="mod_vis.h" />
+    <ClInclude Include="net.h" />
+    <ClInclude Include="networkstringtable.h" />
+    <ClInclude Include="networkstringtableclient.h" />
+    <ClInclude Include="networkstringtableitem.h" />
+    <ClInclude Include="networkstringtableserver.h" />
+    <ClInclude Include="net_chan.h" />
+    <ClInclude Include="net_synctags.h" />
+    <ClInclude Include="Overlay.h" />
+    <ClInclude Include="packed_entity.h" />
+    <ClInclude Include="precache.h" />
+    <ClInclude Include="procinfo.h" />
+    <ClInclude Include="profile.h" />
+    <ClInclude Include="profiling.h" />
+    <ClInclude Include="progs.h" />
+    <ClInclude Include="pr_edict.h" />
+    <ClInclude Include="quakedef.h" />
+    <ClInclude Include="randomnormals.h" />
+    <ClInclude Include="render.h" />
+    <ClInclude Include="r_areaportal.h" />
+    <ClInclude Include="r_decal.h" />
+    <ClInclude Include="r_efxextern.h" />
+    <ClInclude Include="r_local.h" />
+    <ClInclude Include="saverestore_filesystem.h" />
+    <ClInclude Include="sbar.h" />
+    <ClInclude Include="screen.h" />
+    <ClInclude Include="server.h" />
+    <ClInclude Include="Session.h" />
+    <ClInclude Include="shadowmgr.h" />
+    <ClInclude Include="socketcreator.h" />
+    <ClInclude Include="staticpropmgr.h" />
+    <ClInclude Include="studio_internal.h" />
+    <ClInclude Include="surfacehandle.h" />
+    <ClInclude Include="sv_client.h" />
+    <ClInclude Include="sv_ents_write.h" />
+    <ClInclude Include="sv_filter.h" />
+    <ClInclude Include="sv_ipratelimit.h" />
+    <ClInclude Include="sv_log.h" />
+    <ClInclude Include="sv_logofile.h" />
+    <ClInclude Include="sv_main.h" />
+    <ClInclude Include="sv_packedentities.h" />
+    <ClInclude Include="sv_plugin.h" />
+    <ClInclude Include="sv_precache.h" />
+    <ClInclude Include="sv_rcon.h" />
+    <ClInclude Include="sv_remoteaccess.h" />
+    <ClInclude Include="sv_steamauth.h" />
+    <ClInclude Include="sv_uploaddata.h" />
+    <ClInclude Include="sv_uploadgamestats.h" />
+    <ClInclude Include="sv_user.h" />
+    <ClInclude Include="sys.h" />
+    <ClInclude Include="sysexternal.h" />
+    <ClInclude Include="sys_dll.h" />
+    <ClInclude Include="sys_mainwind.h" />
+    <ClInclude Include="testscriptmgr.h" />
+    <ClInclude Include="tmessage.h" />
+    <ClInclude Include="traceinit.h" />
+    <ClInclude Include="vengineserver_impl.h" />
+    <ClInclude Include="vgui_basepanel.h" />
+    <ClInclude Include="vgui_baseui_interface.h" />
+    <ClInclude Include="vgui_budgetpanel.h" />
+    <ClInclude Include="vgui_DebugSystemPanel.h" />
+    <ClInclude Include="vgui_drawtreepanel.h" />
+    <ClInclude Include="vgui_helpers.h" />
+    <ClInclude Include="vgui_texturebudgetpanel.h" />
+    <ClInclude Include="vgui_vprofgraphpanel.h" />
+    <ClInclude Include="vgui_vprofpanel.h" />
+    <ClInclude Include="VID.H" />
+    <ClInclude Include="view.h" />
+    <ClInclude Include="vmodes.h" />
+    <ClInclude Include="vprof_engine.h" />
+    <ClInclude Include="vprof_record.h" />
+    <ClInclude Include="WINQUAKE.H" />
+    <ClInclude Include="world.h" />
+    <ClInclude Include="zone.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Appframework\Appframework.vcxproj">
+      <Project>{78fad5ea-74e3-4083-b4b1-f0bd1bd629f7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Bitmap\Bitmap.vcxproj">
+      <Project>{032c3f93-a6af-4251-84c4-af6d0adced92}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Dmxloader\Dmxloader.vcxproj">
+      <Project>{4ea83c31-9176-47d4-81d6-c8fbdb543573}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Mathlib\Mathlib.vcxproj">
+      <Project>{db0f08fc-4c9c-45ed-bad6-ce53739a1d78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier0\Tier0.vcxproj">
+      <Project>{fa581397-f3cb-4836-9593-ef1b68321759}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier1\Tier1.vcxproj">
+      <Project>{51192468-c00f-4ecc-801e-c3a1cb9f7fab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier2\Tier2.vcxproj">
+      <Project>{bc0b12c5-1f4b-4fc3-b2e0-c90c2ac94fda}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier3\Tier3.vcxproj">
+      <Project>{f3dd62d3-f834-4221-bee1-53a0754d61d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\utils\bzip2\Bzip2.vcxproj">
+      <Project>{ad9ee5ec-c54d-4c6e-b27c-1d2b09877637}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\utils\Jpeglib\Jpeglib.vcxproj">
+      <Project>{20302565-8937-46c0-baee-9900fd70ed56}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\vgui2\matsys_controls\matsys_controls.vcxproj">
+      <Project>{806f4a0d-86f0-4854-abb3-0bcb551a547f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\vgui2\Vgui_controls\Vgui_controls.vcxproj">
+      <Project>{978f853c-a2d8-4ecc-994e-d1160c758408}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vstdlib\Vstdlib.vcxproj">
+      <Project>{0133fc6b-bf48-4977-863d-8ba66a381c6a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vtf\Vtf.vcxproj">
+      <Project>{d20d2e26-fdba-4254-b426-03f35a6e389b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{22934eca-fb69-466f-af4c-763268183126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{b4c073bd-039c-41cf-86b4-e853d18b8690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Source Files">
+      <UniqueIdentifier>{db0297db-543f-455f-8dee-a4b1c6158fad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="datacache.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mdlcache.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\tier0\memoverride.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\studio.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\studio_virtualmodel.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\studiobyteswap.cpp">
+      <Filter>Interface\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="datacache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="datacache_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="datacache_cvar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="studio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\studiobyteswap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\datacache\idatacache.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\datacache\idatacacheV1.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\datacache\imdlcache.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

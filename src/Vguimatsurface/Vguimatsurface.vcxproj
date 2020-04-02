@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{DF9F143F-D9D1-48E9-A4A8-C31F88FD0FEC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Vguimatsurface</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>VGUIMATSURFACE_DLL_EXPORT;GAMEUI_EXPORTS;DONT_PROTECT_FILEIO_FUNCTIONS;PROTECTED_THINGS_ENABLE;ENABLE_HTMLWINDOW;WIN32;_DEBUG;VGUIMATSURFACE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>VGUIMATSURFACE_DLL_EXPORT;GAMEUI_EXPORTS;DONT_PROTECT_FILEIO_FUNCTIONS;PROTECTED_THINGS_ENABLE;ENABLE_HTMLWINDOW;_DEBUG;VGUIMATSURFACE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>VGUIMATSURFACE_DLL_EXPORT;GAMEUI_EXPORTS;DONT_PROTECT_FILEIO_FUNCTIONS;PROTECTED_THINGS_ENABLE;ENABLE_HTMLWINDOW;WIN32;NDEBUG;VGUIMATSURFACE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>VGUIMATSURFACE_DLL_EXPORT;GAMEUI_EXPORTS;DONT_PROTECT_FILEIO_FUNCTIONS;PROTECTED_THINGS_ENABLE;ENABLE_HTMLWINDOW;NDEBUG;VGUIMATSURFACE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\filesystem_helpers.cpp" />
+    <ClCompile Include="..\..\include\tier0\memoverride.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\include\vgui_controls\vgui_controls.cpp" />
+    <ClCompile Include="..\vgui2\vgui2\htmlwindow.cpp" />
+    <ClCompile Include="..\vgui2\vgui2\vgui_key_translation.cpp" />
+    <ClCompile Include="Clip2D.cpp" />
+    <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="FontTextureCache.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="MatSystemSurface.cpp" />
+    <ClCompile Include="memorybitmap.cpp" />
+    <ClCompile Include="TextureDictionary.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\vgui\HtmlWindow.h" />
+    <ClInclude Include="..\common\vgui_surfacelib\FontAmalgam.h" />
+    <ClInclude Include="..\common\vgui_surfacelib\FontManager.h" />
+    <ClInclude Include="..\common\vgui_surfacelib\Win32Font.h" />
+    <ClInclude Include="..\..\include\appframework\IAppSystem.h" />
+    <ClInclude Include="..\..\include\commonmacros.h" />
+    <ClInclude Include="..\..\include\filesystem.h" />
+    <ClInclude Include="..\..\include\filesystem_helpers.h" />
+    <ClInclude Include="..\..\include\imageloader.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterial.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialsystem.h" />
+    <ClInclude Include="..\..\include\materialsystem\imaterialvar.h" />
+    <ClInclude Include="..\..\include\materialsystem\imesh.h" />
+    <ClInclude Include="..\..\include\materialsystem\itexture.h" />
+    <ClInclude Include="..\..\include\mathlib\vector.h" />
+    <ClInclude Include="..\..\include\mathlib\vector2d.h" />
+    <ClInclude Include="..\..\include\mathlib\vector4d.h" />
+    <ClInclude Include="..\..\include\pixelwriter.h" />
+    <ClInclude Include="..\..\include\tier0\basetypes.h" />
+    <ClInclude Include="..\..\include\tier1\characterset.h" />
+    <ClInclude Include="..\..\include\tier1\checksum_crc.h" />
+    <ClInclude Include="..\..\include\tier1\interface.h" />
+    <ClInclude Include="..\..\include\tier1\utllinkedlist.h" />
+    <ClInclude Include="..\..\include\tier1\utlmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlrbtree.h" />
+    <ClInclude Include="..\..\include\tier1\utlvector.h" />
+    <ClInclude Include="..\..\include\VGuiMatSurface\IMatSystemSurface.h" />
+    <ClInclude Include="..\..\include\vstdlib\strtools.h" />
+    <ClInclude Include="..\..\include\vstdlib\vstdlib.h" />
+    <ClInclude Include="..\..\include\vtf\vtf.h" />
+    <ClInclude Include="..\vgui2\vgui2\vgui_key_translation.h" />
+    <ClInclude Include="Clip2D.h" />
+    <ClInclude Include="Cursor.h" />
+    <ClInclude Include="FontTextureCache.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="MatSystemSurface.h" />
+    <ClInclude Include="memorybitmap.h" />
+    <ClInclude Include="TextureDictionary.h" />
+    <ClInclude Include="vguimatsurface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bitmap\Bitmap.vcxproj">
+      <Project>{032c3f93-a6af-4251-84c4-af6d0adced92}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Mathlib\Mathlib.vcxproj">
+      <Project>{db0f08fc-4c9c-45ed-bad6-ce53739a1d78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier0\Tier0.vcxproj">
+      <Project>{fa581397-f3cb-4836-9593-ef1b68321759}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier1\Tier1.vcxproj">
+      <Project>{51192468-c00f-4ecc-801e-c3a1cb9f7fab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier2\Tier2.vcxproj">
+      <Project>{bc0b12c5-1f4b-4fc3-b2e0-c90c2ac94fda}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier3\Tier3.vcxproj">
+      <Project>{f3dd62d3-f834-4221-bee1-53a0754d61d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\vgui2\Vgui_controls\Vgui_controls.vcxproj">
+      <Project>{978f853c-a2d8-4ecc-994e-d1160c758408}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\vgui2\vgui_surfacelib\vgui_surfacelib.vcxproj">
+      <Project>{ef7a0f84-ff66-458f-9f49-7da186a901de}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vstdlib\Vstdlib.vcxproj">
+      <Project>{0133fc6b-bf48-4977-863d-8ba66a381c6a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

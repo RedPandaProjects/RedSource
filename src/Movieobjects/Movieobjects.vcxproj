@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{A44CAD7F-DBBD-47BD-AFB8-CBFD795C0B2F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Movieobjects</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)\tier0;$(Inc)\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)\tier0;$(Inc)\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)\tier0;$(Inc)\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)\tier0;$(Inc)\tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\bone_setup.cpp" />
+    <ClCompile Include="..\..\include\collisionutils.cpp" />
+    <ClCompile Include="..\..\include\phonemeconverter.cpp" />
+    <ClCompile Include="..\..\include\studio.cpp" />
+    <ClCompile Include="dmeanimationlist.cpp" />
+    <ClCompile Include="dmeanimationset.cpp" />
+    <ClCompile Include="dmeattachment.cpp" />
+    <ClCompile Include="dmebalancetostereocalculatoroperator.cpp" />
+    <ClCompile Include="dmebookmark.cpp" />
+    <ClCompile Include="dmecamera.cpp" />
+    <ClCompile Include="dmechannel.cpp" />
+    <ClCompile Include="dmeclip.cpp" />
+    <ClCompile Include="dmecombinationoperator.cpp" />
+    <ClCompile Include="dmedag.cpp" />
+    <ClCompile Include="dmedccmakefile.cpp" />
+    <ClCompile Include="dmedrawsettings.cpp" />
+    <ClCompile Include="dmeeditortypedictionary.cpp" />
+    <ClCompile Include="dmeexpressionoperator.cpp" />
+    <ClCompile Include="dmeeyeball.cpp" />
+    <ClCompile Include="dmeeyeposition.cpp" />
+    <ClCompile Include="dmefaceset.cpp" />
+    <ClCompile Include="dmegamemodel.cpp" />
+    <ClCompile Include="dmegamemodelinput.cpp" />
+    <ClCompile Include="dmeinput.cpp" />
+    <ClCompile Include="dmejoint.cpp" />
+    <ClCompile Include="dmekeyboardinput.cpp" />
+    <ClCompile Include="dmelight.cpp" />
+    <ClCompile Include="dmelog.cpp" />
+    <ClCompile Include="dmemakefile.cpp" />
+    <ClCompile Include="dmemakefileutils.cpp" />
+    <ClCompile Include="dmematerial.cpp" />
+    <ClCompile Include="dmematerialoverlayfxclip.cpp" />
+    <ClCompile Include="dmemdl.cpp" />
+    <ClCompile Include="dmemdlmakefile.cpp" />
+    <ClCompile Include="dmemesh.cpp" />
+    <ClCompile Include="dmemodel.cpp" />
+    <ClCompile Include="dmemorphoperator.cpp" />
+    <ClCompile Include="dmemouseinput.cpp" />
+    <ClCompile Include="dmeoperator.cpp" />
+    <ClCompile Include="dmepackoperators.cpp" />
+    <ClCompile Include="dmeparticlesystemdefinition.cpp" />
+    <ClCompile Include="dmephonememapping.cpp" />
+    <ClCompile Include="dmeselection.cpp" />
+    <ClCompile Include="dmeshape.cpp" />
+    <ClCompile Include="dmesound.cpp" />
+    <ClCompile Include="dmetimeframe.cpp" />
+    <ClCompile Include="dmetimeselection.cpp" />
+    <ClCompile Include="dmetrack.cpp" />
+    <ClCompile Include="dmetrackgroup.cpp" />
+    <ClCompile Include="dmetransform.cpp" />
+    <ClCompile Include="dmetransforminput.cpp" />
+    <ClCompile Include="dmetransformlist.cpp" />
+    <ClCompile Include="dmetransformoperator.cpp" />
+    <ClCompile Include="dmeunpackoperators.cpp" />
+    <ClCompile Include="dmevertexdata.cpp" />
+    <ClCompile Include="dmmeshcomp.cpp" />
+    <ClCompile Include="dmmeshutils.cpp" />
+    <ClCompile Include="dmobjserializer.cpp" />
+    <ClCompile Include="movieobjects_interfaces.cpp" />
+    <ClCompile Include="timeutils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\mathlib\mathlib.h" />
+    <ClInclude Include="..\..\include\mathlib\vector.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeanimationlist.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeanimationset.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeattachment.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmebalancetostereocalculatoroperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmebookmark.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmecamera.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmechannel.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeclip.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmecombinationoperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmedag.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmedccmakefile.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmedrawsettings.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeeditortypedictionary.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeexpressionoperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeeyeball.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeeyeposition.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmefaceset.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmegamemodel.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmegamemodelinput.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeinput.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmejoint.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmekeyboardinput.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmelight.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmelog.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemakefile.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemakefileutils.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmematerial.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmematerialoverlayfxclip.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemdl.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemdlmakefile.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemesh.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemodel.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemorphoperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmemouseinput.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeoperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmepackoperators.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeparticlesystemdefinition.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmephonememapping.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeselection.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeshape.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmesound.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetestmesh.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetimeframe.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetimeselection.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetimeselectiontimes.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetrack.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetrackgroup.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetransform.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetransforminput.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetransformlist.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmetransformoperator.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmeunpackoperators.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmevertexdata.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmmeshcomp.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmmeshutils.h" />
+    <ClInclude Include="..\..\include\movieobjects\dmobjserializer.h" />
+    <ClInclude Include="..\..\include\movieobjects\idmemakefileutils.h" />
+    <ClInclude Include="..\..\include\movieobjects\movieobjects.h" />
+    <ClInclude Include="..\..\include\movieobjects\timeutils.h" />
+    <ClInclude Include="..\..\include\phonemeconverter.h" />
+    <ClInclude Include="movieobjects_interfaces.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

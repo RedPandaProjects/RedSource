@@ -1,0 +1,168 @@
+"Configs"
+{
+	"Games"
+	{
+		"Half-Life 2"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\halflife2.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\hl2\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Counter-Strike: Source"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\cstrike"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\cstrike.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_terrorist"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\cstrike\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\cstrike\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Half-Life 2: Deathmatch"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2mp"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2mp.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_deathmatch"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\hl2mp\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2mp\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Day of Defeat: Source"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\dod"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\dod.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_allies"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\dod\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\dod\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Half-Life 2: Episode Two"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\ep2"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\halflife2.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\ep2\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\ep2\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Team Fortress 2"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\tf"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\tf.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_teamspawn"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\tf\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\tf\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Portal"
+		{
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\portal"
+			"Hammer"
+			{
+				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\portal.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
+				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
+				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
+				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\portal\mapsrc"
+				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\portal\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+	}
+	"SDKVersion"		"3"
+}

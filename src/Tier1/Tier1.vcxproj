@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{51192468-C00F-4ECC-801E-C3A1CB9F7FAB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Tier1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bitbuf.cpp" />
+    <ClCompile Include="byteswap.cpp" />
+    <ClCompile Include="characterset.cpp" />
+    <ClCompile Include="checksum_crc.cpp" />
+    <ClCompile Include="checksum_md5.cpp" />
+    <ClCompile Include="commandbuffer.cpp" />
+    <ClCompile Include="convar.cpp" />
+    <ClCompile Include="datamanager.cpp" />
+    <ClCompile Include="diff.cpp" />
+    <ClCompile Include="generichash.cpp" />
+    <ClCompile Include="interface.cpp" />
+    <ClCompile Include="KeyValues.cpp" />
+    <ClCompile Include="lzmaDecoder.cpp" />
+    <ClCompile Include="lzss.cpp" />
+    <ClCompile Include="mempool.cpp" />
+    <ClCompile Include="memstack.cpp" />
+    <ClCompile Include="NetAdr.cpp" />
+    <ClCompile Include="newbitbuf.cpp" />
+    <ClCompile Include="processor_detect.cpp">
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sync</ExceptionHandling>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Sync</ExceptionHandling>
+    </ClCompile>
+    <ClCompile Include="rangecheckedvar.cpp" />
+    <ClCompile Include="stringpool.cpp" />
+    <ClCompile Include="strtools.cpp" />
+    <ClCompile Include="tier1.cpp" />
+    <ClCompile Include="tokenreader.cpp" />
+    <ClCompile Include="uniqueid.cpp" />
+    <ClCompile Include="utlbuffer.cpp" />
+    <ClCompile Include="utlbufferutil.cpp" />
+    <ClCompile Include="utlstring.cpp" />
+    <ClCompile Include="utlsymbol.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tier1.vpc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\xbox\xboxstubs.h" />
+    <ClInclude Include="..\..\include\datamap.h" />
+    <ClInclude Include="..\..\include\tier1\bitbuf.h" />
+    <ClInclude Include="..\..\include\tier1\byteswap.h" />
+    <ClInclude Include="..\..\include\tier1\callqueue.h" />
+    <ClInclude Include="..\..\include\tier1\characterset.h" />
+    <ClInclude Include="..\..\include\tier1\checksum_crc.h" />
+    <ClInclude Include="..\..\include\tier1\checksum_md5.h" />
+    <ClInclude Include="..\..\include\tier1\CommandBuffer.h" />
+    <ClInclude Include="..\..\include\tier1\convar.h" />
+    <ClInclude Include="..\..\include\tier1\datamanager.h" />
+    <ClInclude Include="..\..\include\tier1\delegates.h" />
+    <ClInclude Include="..\..\include\tier1\diff.h" />
+    <ClInclude Include="..\..\include\tier1\fmtstr.h" />
+    <ClInclude Include="..\..\include\tier1\functors.h" />
+    <ClInclude Include="..\..\include\tier1\generichash.h" />
+    <ClInclude Include="..\..\include\tier1\iconvar.h" />
+    <ClInclude Include="..\..\include\tier1\interface.h" />
+    <ClInclude Include="..\..\include\tier1\KeyValues.h" />
+    <ClInclude Include="..\..\include\tier1\lzmaDecoder.h" />
+    <ClInclude Include="..\..\include\tier1\lzss.h" />
+    <ClInclude Include="..\..\include\tier1\mempool.h" />
+    <ClInclude Include="..\..\include\tier1\memstack.h" />
+    <ClInclude Include="..\..\include\tier1\netadr.h" />
+    <ClInclude Include="..\..\include\tier1\processor_detect.h" />
+    <ClInclude Include="..\..\include\tier1\rangecheckedvar.h" />
+    <ClInclude Include="..\..\include\tier1\refcount.h" />
+    <ClInclude Include="..\..\include\tier1\smartptr.h" />
+    <ClInclude Include="..\..\include\tier1\stringpool.h" />
+    <ClInclude Include="..\..\include\tier1\strtools.h" />
+    <ClInclude Include="..\..\include\tier1\tier1.h" />
+    <ClInclude Include="..\..\include\tier1\tokenreader.h" />
+    <ClInclude Include="..\..\include\tier1\uniqueid.h" />
+    <ClInclude Include="..\..\include\tier1\utlbidirectionalset.h" />
+    <ClInclude Include="..\..\include\tier1\utlblockmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlbuffer.h" />
+    <ClInclude Include="..\..\include\tier1\utlbufferutil.h" />
+    <ClInclude Include="..\..\include\tier1\utldict.h" />
+    <ClInclude Include="..\..\include\tier1\utlenvelope.h" />
+    <ClInclude Include="..\..\include\tier1\utlfixedmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlhandletable.h" />
+    <ClInclude Include="..\..\include\tier1\utlhash.h" />
+    <ClInclude Include="..\..\include\tier1\utllinkedlist.h" />
+    <ClInclude Include="..\..\include\tier1\utlmap.h" />
+    <ClInclude Include="..\..\include\tier1\utlmemory.h" />
+    <ClInclude Include="..\..\include\tier1\utlmultilist.h" />
+    <ClInclude Include="..\..\include\tier1\utlpriorityqueue.h" />
+    <ClInclude Include="..\..\include\tier1\utlqueue.h" />
+    <ClInclude Include="..\..\include\tier1\utlrbtree.h" />
+    <ClInclude Include="..\..\include\tier1\UtlSortVector.h" />
+    <ClInclude Include="..\..\include\tier1\utlstack.h" />
+    <ClInclude Include="..\..\include\tier1\utlstring.h" />
+    <ClInclude Include="..\..\include\tier1\UtlStringMap.h" />
+    <ClInclude Include="..\..\include\tier1\utlsymbol.h" />
+    <ClInclude Include="..\..\include\tier1\utlvector.h" />
+    <ClInclude Include="utlhashtable.h" />
+    <ClInclude Include="utlcommon.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
