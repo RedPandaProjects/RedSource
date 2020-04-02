@@ -6,9 +6,10 @@
     <LocalDebuggerCommandArguments>-window</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LocalDebuggerWorkingDirectory>..\..</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>
+    </LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArguments>-window</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-game "D:\GameDev\Engine\SourceEngine\Source2007\hl2" -window +map "temp"</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerWorkingDirectory>..\..</LocalDebuggerWorkingDirectory>
@@ -16,8 +17,9 @@
     <LocalDebuggerCommandArguments>-window</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerWorkingDirectory>..\..</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>
+    </LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArguments>-window</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-game "D:\GameDev\Engine\SourceEngine\Source2007\hl2" -window +map "temp"</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

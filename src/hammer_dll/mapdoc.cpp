@@ -1835,7 +1835,7 @@ BOOL CMapDoc::Serialize(std::fstream& file, BOOL fIsStoring, BOOL bRMF)
 			
 			CString str;
 			str.Format("Prefab%d.rmf", id++);
-			SetPathName(str);
+			SetPathName(str, FALSE);
 			return 1;
 		}
 
@@ -4575,7 +4575,7 @@ void CMapDoc::OnFileSaveAs(void)
 		}
 	} while (!bSave);
 
-	SetPathName(str);
+	SetPathName(str,false);
 	OnSaveDocument(str);
 }
 

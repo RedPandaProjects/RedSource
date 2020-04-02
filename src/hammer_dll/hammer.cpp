@@ -1580,7 +1580,7 @@ CDocument* CHammer::OpenDocumentFile(LPCTSTR lpszFileName)
 
 		if ( AfxMessageBox( szRenameMessage, MB_YESNO ) == IDYES )
 		{			
-			((CMapDoc *)pDoc)->SetPathName( newMapPath );		
+			((CMapDoc *)pDoc)->SetPathName( newMapPath, FALSE);
 		}			
 	}
 
@@ -2252,7 +2252,7 @@ void CHammer::LoadLastGoodSave( void )
 
 			if ( AfxMessageBox( szRenameMessage, MB_YESNO ) == IDYES )
 			{			
-				pCurrentDoc->SetPathName( newMapPath );		
+				pCurrentDoc->SetPathName( newMapPath, FALSE);
 			}		
 		}
 	}

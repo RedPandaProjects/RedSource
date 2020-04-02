@@ -4,7 +4,7 @@
 	{
 		"Half-Life 2"
 		{
-			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2"
+			"GameDir"		"D:\GameDev\Engine\SourceEngine\Source2007\hl2"
 			"Hammer"
 			{
 				"GameData0"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\halflife2.fgd"
@@ -12,12 +12,12 @@
 				"MapFormat"		"4"
 				"DefaultTextureScale"		"0.250000"
 				"DefaultLightmapScale"		"16"
-				"GameExe"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2.exe"
+				"GameExe"		"SourceEngine.exe"
 				"DefaultSolidEntity"		"func_detail"
 				"DefaultPointEntity"		"info_player_start"
-				"BSP"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vbsp.exe"
-				"Vis"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vvis.exe"
-				"Light"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\vrad.exe"
+				"BSP"		"Vbsp.exe"
+				"Vis"		"vvis.exe"
+				"Light"		"vrad.exe"
 				"GameExeDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\.."
 				"MapDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\content\hl2\mapsrc"
 				"BSPDir"		"D:\GameDev\Engine\SourceEngine\Source2007\src\..\hl2\maps"
