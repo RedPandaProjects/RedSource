@@ -1,6 +1,6 @@
 ![Open for everyone](forgit/logo.png)
 
-RedSource ![Discord](https://img.shields.io/discord/530968529311367178?label=discord&style=plastic)
+RedSource [![Discord](https://img.shields.io/discord/530968529311367178?label=discord)](https://discord.gg/AyyCFs7)
 ==========================
 RedSource  is open source version of the Source engine, used in  Half life 2 , Counter-Strike Source ,Garry's Mod, etc. games series by Valve.
 
