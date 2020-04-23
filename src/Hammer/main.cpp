@@ -101,7 +101,7 @@ bool CHammerApp::Create( )
 		{ "materialsystem.dll",		MATERIAL_SYSTEM_INTERFACE_VERSION },
 		{ "inputsystem.dll",		INPUTSYSTEM_INTERFACE_VERSION },
 		{ "studiorender.dll",		STUDIO_RENDER_INTERFACE_VERSION },
-		{ "vphysics.dll",			VPHYSICS_INTERFACE_VERSION },
+		{ "vphysicsBullet.dll",			VPHYSICS_INTERFACE_VERSION },
 		{ "datacache.dll",			DATACACHE_INTERFACE_VERSION },
 		{ "datacache.dll",			MDLCACHE_INTERFACE_VERSION },
 		{ "datacache.dll",			STUDIO_DATA_CACHE_INTERFACE_VERSION },
