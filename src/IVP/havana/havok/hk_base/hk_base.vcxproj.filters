@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="memory">
+      <UniqueIdentifier>{8b2f267a-e401-4300-ac30-96ea35c08084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="array">
+      <UniqueIdentifier>{b57ee7e1-92a2-4cf4-8dbe-59ea690cc628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hash">
+      <UniqueIdentifier>{af51e049-7760-431b-9f2b-e35d4a23c455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stopwatch">
+      <UniqueIdentifier>{aa7d9717-83c7-4bf9-bf31-5bc417319827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="string">
+      <UniqueIdentifier>{6cfc3672-e55b-427a-a04a-ee1d09b37408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="id_server">
+      <UniqueIdentifier>{7d40ce4f-22eb-40d7-be3d-57c4e2fa5f36}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="memory\memory.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\memory_util.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="array\array.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="hash\hash.cpp">
+      <Filter>hash</Filter>
+    </ClCompile>
+    <ClCompile Include="stopwatch\stopwatch.cpp">
+      <Filter>stopwatch</Filter>
+    </ClCompile>
+    <ClCompile Include="string\string.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="id_server\id_server.cpp">
+      <Filter>id_server</Filter>
+    </ClCompile>
+    <ClCompile Include="base_types.cpp" />
+    <ClCompile Include="console.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="memory\memory.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\memory_managed_virtual_class.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\memory_util.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="array\array.h">
+      <Filter>array</Filter>
+    </ClInclude>
+    <ClInclude Include="array\pre_allocated_array.h">
+      <Filter>array</Filter>
+    </ClInclude>
+    <ClInclude Include="hash\hash.h">
+      <Filter>hash</Filter>
+    </ClInclude>
+    <ClInclude Include="stopwatch\stopwatch.h">
+      <Filter>stopwatch</Filter>
+    </ClInclude>
+    <ClInclude Include="string\string.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="id_server\id_server.h">
+      <Filter>id_server</Filter>
+    </ClInclude>
+    <ClInclude Include="base.h" />
+    <ClInclude Include="base_types.h" />
+    <ClInclude Include="console.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="memory\memory.inl">
+      <Filter>memory</Filter>
+    </CustomBuild>
+    <CustomBuild Include="array\array.inl">
+      <Filter>array</Filter>
+    </CustomBuild>
+    <CustomBuild Include="hash\hash.inl">
+      <Filter>hash</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stopwatch\stopwatch_qpt.inl">
+      <Filter>stopwatch</Filter>
+    </CustomBuild>
+    <CustomBuild Include="id_server\id_server.inl">
+      <Filter>id_server</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

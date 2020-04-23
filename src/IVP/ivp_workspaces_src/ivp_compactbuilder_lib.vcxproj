@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>ivp_compactbuilder</ProjectName>
+    <SccProjectName>ivp_compactbuilder_lib</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <ProjectGuid>{62D49B3D-AD4D-4F65-BB22-D5DDB8A6AE22}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>../ivp_surface_manager;../ivp_physics;../ivp_compact_builder;../ivp_utility;../ivp_collision;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;IVP_VERSION_SDK;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ivp_physics.hxx</PrecompiledHeaderFile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\obj\win32_release\ivp_compactbuilder\ivp_compactbuilder_lib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../ivp_surface_manager;../ivp_physics;../ivp_compact_builder;../ivp_utility;../ivp_collision;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;_LIB;WIN32;IVP_VERSION_SDK;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeader />
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\obj\win32_debug\ivp_compactbuilder\ivp_compactbuilder_lib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Ivp_compact_builder\3dsimport_co.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_cutfac.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_cvdec3.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_drdec3.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_dsphdc.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_edght.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_initcb.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insed3.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insfac.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insvr3.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_prime.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_ptpolg.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\geompack_resedg.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_ledge_gen.cxx">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ivp_physics.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ivp_physics.hxx</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_modify.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_recursive.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_convex_decompositor.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_halfspacesoup.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_i_fpoint_vhash.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_i_point_vhash.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_object_polygon_tetra.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_rot_inertia_solver.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_halfspacesoup.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_ledge_soup.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_pointsoup.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_polygon_convex.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_polyhdrn_cncv.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_q12.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_templates_intern.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivp_tetra_intrude.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\ivv_cluster_min_hash.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_geom.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_geom2.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_global.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_io.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_mem.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_merge.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_poly.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_poly2.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_qset.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_stat.cxx" />
+    <ClCompile Include="..\Ivp_compact_builder\qhull_user.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\3dsimport_load.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\geompack.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_ledge_gen.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_modify.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_recursive.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_convex_decompositor.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_halfspacesoup.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_i_fpoint_vhash.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_i_point_vhash.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_object_polygon_tetra.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_rot_inertia_solver.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_3ds.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_halfspacesoup.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_ledge_soup.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_pointsoup.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_polygon_convex.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_polyhdrn_cncv.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_q12.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_templates_intern.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_tetra_intrude.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_triangle_gen.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivv_cluster_min_hash.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_a.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_geom.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_io.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_mem.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_merge.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_poly.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_qset.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_stat.hxx" />
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_user.hxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IVP\havana\havok\hk_base\hk_base.vcxproj">
+      <Project>{29ff5610-2fe0-4f8c-848a-685db4ebd7dc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\IVP\havana\havok\hk_math\hk_math.vcxproj">
+      <Project>{9db6619c-e27b-4409-8085-7e643021a5a7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\IVP\ivp_workspaces_src\havana_constraints.vcxproj">
+      <Project>{02a4c537-2360-49cd-91c2-bd18e3e43df2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\IVP\ivp_workspaces_src\ivp_compactbuilder_lib.vcxproj">
+      <Project>{62d49b3d-ad4d-4f65-bb22-d5ddb8a6ae22}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\IVP\ivp_workspaces_src\ivp_physics_lib.vcxproj">
+      <Project>{09b1aeae-982a-4677-9adf-ea914ad2e85f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Mathlib\Mathlib.vcxproj">
+      <Project>{db0f08fc-4c9c-45ed-bad6-ce53739a1d78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier0\Tier0.vcxproj">
+      <Project>{fa581397-f3cb-4836-9593-ef1b68321759}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier1\Tier1.vcxproj">
+      <Project>{51192468-c00f-4ecc-801e-c3a1cb9f7fab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier2\Tier2.vcxproj">
+      <Project>{bc0b12c5-1f4b-4fc3-b2e0-c90c2ac94fda}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tier3\Tier3.vcxproj">
+      <Project>{f3dd62d3-f834-4221-bee1-53a0754d61d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\utils\Bullet\msvc\LinearMath\LinearMath.vcxproj">
+      <Project>{f60b05de-500c-42eb-8a96-652339877072}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Vstdlib\Vstdlib.vcxproj">
+      <Project>{0133fc6b-bf48-4977-863d-8ba66a381c6a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\filesystem_helpers.cpp" />
+    <ClCompile Include="convert.cpp" />
+    <ClCompile Include="ledgewriter.cpp" />
+    <ClCompile Include="linear_solver.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="physics_airboat.cpp" />
+    <ClCompile Include="physics_collide.cpp" />
+    <ClCompile Include="physics_constraint.cpp" />
+    <ClCompile Include="physics_controller_raycast_vehicle.cpp" />
+    <ClCompile Include="physics_environment.cpp" />
+    <ClCompile Include="physics_fluid.cpp" />
+    <ClCompile Include="physics_friction.cpp" />
+    <ClCompile Include="physics_material.cpp" />
+    <ClCompile Include="physics_motioncontroller.cpp" />
+    <ClCompile Include="physics_object.cpp" />
+    <ClCompile Include="physics_shadow.cpp" />
+    <ClCompile Include="physics_spring.cpp" />
+    <ClCompile Include="physics_vehicle.cpp" />
+    <ClCompile Include="physics_virtualmesh.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="trace.cpp" />
+    <ClCompile Include="vcollide_parse.cpp" />
+    <ClCompile Include="vphysics_saverestore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cbase.h" />
+    <ClInclude Include="convert.h" />
+    <ClInclude Include="ledgewriter.h" />
+    <ClInclude Include="linear_solver.h" />
+    <ClInclude Include="physics_airboat.h" />
+    <ClInclude Include="physics_constraint.h" />
+    <ClInclude Include="physics_controller_raycast_vehicle.h" />
+    <ClInclude Include="physics_environment.h" />
+    <ClInclude Include="physics_fluid.h" />
+    <ClInclude Include="physics_friction.h" />
+    <ClInclude Include="physics_material.h" />
+    <ClInclude Include="physics_motioncontroller.h" />
+    <ClInclude Include="physics_object.h" />
+    <ClInclude Include="physics_shadow.h" />
+    <ClInclude Include="physics_spring.h" />
+    <ClInclude Include="physics_trace.h" />
+    <ClInclude Include="physics_vehicle.h" />
+    <ClInclude Include="physics_virtualmesh.h" />
+    <ClInclude Include="vcollide_parse_private.h" />
+    <ClInclude Include="vphysics_internal.h" />
+    <ClInclude Include="vphysics_saverestore.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{9A97351B-2F2D-4C4D-AD59-02BD468EF9EC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>VphysicsIVP</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVANA_CONSTRAINTS;HAVOK_MOPP;DEBUG;WIN32;_DEBUG;VPHYSICS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;$(Inc)tier2;$(Inc)tier3;..\utils\Bullet\src;..\ivp\IVP_INTERN;..\ivp\IVP_COLLISION;..\ivp\IVP_PHYSICS;..\ivp\IVP_SURFACE_MANAGER;..\ivp\IVP_UTILITY;..\ivp\IVP_CONTROLLER;..\ivp\IVP_COMPACT_BUILDER;..\ivp\havana\havok;..\ivp\havana;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>PhysX_32.lib;PhysXCommon_32.lib;PhysXCooking_32.lib;PhysXFoundation_32.lib;PhysXExtensions_static_32.lib;PhysXPvdSDK_static_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVANA_CONSTRAINTS;HAVOK_MOPP;DEBUG;_DEBUG;VPHYSICS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;$(Inc)tier2;$(Inc)tier3;..\utils\Bullet\src;..\ivp\IVP_INTERN;..\ivp\IVP_COLLISION;..\ivp\IVP_PHYSICS;..\ivp\IVP_SURFACE_MANAGER;..\ivp\IVP_UTILITY;..\ivp\IVP_CONTROLLER;..\ivp\IVP_COMPACT_BUILDER;..\ivp\havana\havok;..\ivp\havana;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>HAVANA_CONSTRAINTS;HAVOK_MOPP;WIN32;NDEBUG;VPHYSICS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;$(Inc)tier2;$(Inc)tier3;..\utils\Bullet\src;..\ivp\IVP_INTERN;..\ivp\IVP_COLLISION;..\ivp\IVP_PHYSICS;..\ivp\IVP_SURFACE_MANAGER;..\ivp\IVP_UTILITY;..\ivp\IVP_CONTROLLER;..\ivp\IVP_COMPACT_BUILDER;..\ivp\havana\havok;..\ivp\havana;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>PhysX_32.lib;PhysXCommon_32.lib;PhysXCooking_32.lib;PhysXFoundation_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>HAVANA_CONSTRAINTS;HAVOK_MOPP;NDEBUG;VPHYSICS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;$(Inc)tier2;$(Inc)tier3;..\utils\Bullet\src;..\ivp\IVP_INTERN;..\ivp\IVP_COLLISION;..\ivp\IVP_PHYSICS;..\ivp\IVP_SURFACE_MANAGER;..\ivp\IVP_UTILITY;..\ivp\IVP_CONTROLLER;..\ivp\IVP_COMPACT_BUILDER;..\ivp\havana\havok;..\ivp\havana;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

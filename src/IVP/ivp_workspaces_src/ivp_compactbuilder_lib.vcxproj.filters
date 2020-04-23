@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IVP_COMPACT_BUILDER">
+      <UniqueIdentifier>{966b9809-457b-46e4-8b80-70f04ff6f267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_QHULL">
+      <UniqueIdentifier>{a90cd0fe-ae7a-40cd-8343-bf0b5a850df9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_GEOMPACK">
+      <UniqueIdentifier>{f9539e7e-695b-4328-b08f-9138e4a31a93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_ledge_gen.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_modify.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_compact_recursive.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_convex_decompositor.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_halfspacesoup.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_i_fpoint_vhash.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_i_point_vhash.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_object_polygon_tetra.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_rot_inertia_solver.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_halfspacesoup.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_ledge_soup.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_pointsoup.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_polygon_convex.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_polyhdrn_cncv.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_surbuild_q12.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_templates_intern.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivp_tetra_intrude.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\ivv_cluster_min_hash.cxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_geom.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_geom2.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_global.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_io.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_mem.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_merge.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_poly.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_poly2.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_qset.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_stat.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\qhull_user.cxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_cutfac.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_cvdec3.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_drdec3.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_dsphdc.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_edght.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_initcb.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insed3.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insfac.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_insvr3.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_prime.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_ptpolg.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\geompack_resedg.cxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_compact_builder\3dsimport_co.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_ledge_gen.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_modify.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_compact_recursive.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_convex_decompositor.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_halfspacesoup.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_i_fpoint_vhash.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_i_point_vhash.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_object_polygon_tetra.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_rot_inertia_solver.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_3ds.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_halfspacesoup.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_ledge_soup.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_pointsoup.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_polygon_convex.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_polyhdrn_cncv.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_surbuild_q12.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_templates_intern.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_tetra_intrude.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivp_triangle_gen.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\ivv_cluster_min_hash.hxx">
+      <Filter>IVP_COMPACT_BUILDER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_a.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_geom.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_io.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_mem.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_merge.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_poly.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_qset.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_stat.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\qhull_user.hxx">
+      <Filter>IVP_QHULL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\geompack.hxx">
+      <Filter>IVP_GEOMPACK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COMPACT_BUILDER\3dsimport_load.hxx" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>ivp_physics</ProjectName>
+    <SccProjectName>ivp_physics_lib</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <ProjectGuid>{09B1AEAE-982A-4677-9ADF-EA914AD2E85F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../ivp_collision;../ivp_controller;../ivp_intern;../ivp_physics;../ivp_surface_manager;../ivp_utility;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;HAVOK_MOPP;_LIB;WIN32;IVP_VERSION_SDK;HAVANA_CONSTRAINTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeader />
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\obj\win32_debug\ivp_physics\ivp_physics_lib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>../ivp_collision;../ivp_controller;../ivp_intern;../ivp_physics;../ivp_surface_manager;../ivp_utility;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;IVP_VERSION_SDK;HAVANA_CONSTRAINTS;HAVOK_MOPP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ivp_physics.hxx</PrecompiledHeaderFile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\obj\win32_release\ivp_physics\ivp_physics_lib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Ivp_collision\ivp_3d_solver.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_longrange.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_lrange_hash.cxx" />
+    <ClCompile Include="..\IVP_COLLISION\ivp_clustering_visualizer.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_visual_hash.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_collision_filter.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_coll_del_root_mindist.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_compact_ledge.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_compact_ledge_solver.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_i_collision_vhash.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_debug.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_event.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_mcases.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_minimize.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_recursive.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_oo_watcher.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_range_manager.cxx" />
+    <ClCompile Include="..\Ivp_collision\ivp_ray_solver.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_actuator.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_actuator_spring.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_buoyancy_solver.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_car_system.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_constraint.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_car.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_fixed_keyed.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_local.cxx" />
+    <ClCompile Include="..\ivp_controller\ivp_controller_airboat.cpp" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_buoyancy.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_floating.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_motion.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_raycast_car.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_stiff_spring.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_controller_world_frict.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_forcefield.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_multidimensional_interp.cxx" />
+    <ClCompile Include="..\Ivp_controller\ivp_template_constraint.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_ball.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_calc_next_psi_solver.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_controller_phantom.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_core.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_environment.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_friction.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_friction_gaps.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_great_matrix.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_hull_manager.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_impact.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_i_friction_hash.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_i_object_vhash.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_merge_core.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_mindist_friction.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_object.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_object_attach.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_physic.cxx">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ivp_physics.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ivp_physics.hxx</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_physic_private.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_polygon.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_sim_unit.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_solver_core_reaction.cxx" />
+    <ClCompile Include="..\Ivp_intern\ivp_time.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_anomaly_manager.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_betterdebugmanager.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_betterstatisticsmanager.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_cache_object.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_liquid_surface_descript.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_material.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_performancecounter.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_stat_manager_cback_con.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_surface_manager.cxx" />
+    <ClCompile Include="..\Ivp_physics\ivp_templates.cxx" />
+    <ClCompile Include="..\IVP_SURFACE_MANAGER\ivp_compact_surface.cxx" />
+    <ClCompile Include="..\Ivp_surface_manager\ivp_gridbuild_array.cxx" />
+    <ClCompile Include="..\Ivp_surface_manager\ivp_surman_grid.cxx" />
+    <ClCompile Include="..\Ivp_surface_manager\ivp_surman_polygon.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_active_value.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_bigvector.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_geometry.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_hash.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_linear.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_memory.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_min_hash.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_min_list.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_os_dep.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_quat.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_string.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_types.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_vector.cxx" />
+    <ClCompile Include="..\Ivp_utility\ivu_vhash.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\IVP_COLLISION\ivp_3d_solver.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_cache_ledge_point.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_longrange.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_lrange_hash.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_visualizer.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_visual_hash.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_collision.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_collision_filter.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_compact_ledge.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_compact_ledge_solver.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_i_collision_vhash.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_listener_collision.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_event.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_intern.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_macros.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_minimize.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_range_manager.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_ray_solver.hxx" />
+    <ClInclude Include="..\IVP_COLLISION\ivp_universe_manager.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator_info.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator_spring.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_attacher_to_cores.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_buoyancy_solver.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_car_system.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_car.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_fixed_keyed.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_local.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_types.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller.hxx" />
+    <ClInclude Include="..\ivp_controller\ivp_controller_airboat.h" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_buoyancy.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_floating.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_golem.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_motion.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_raycast_car.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_stiff_spring.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_world_frict.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_forcefield.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_multidimensional_interp.hxx" />
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_template_constraint.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_calc_next_psi_solver.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_friction.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_friction_solver.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_hull_manager_macros.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_impact.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_i_controller_vhash.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_i_friction_hash.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_i_object_vhash.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_merge_core.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_physic_private.hxx" />
+    <ClInclude Include="..\IVP_INTERN\ivp_sim_unit.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ive_graphics.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_anomaly_manager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_authenticity.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_auth_empty.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_ball.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_betterdebugmanager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_betterstatisticsmanager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_cache_object.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_contact_situation.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_core.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_core_macros.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_debug.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_debug_manager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_environment.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_great_matrix.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_hull_manager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_liquid_surface_descript.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_hull.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_object.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_psi.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_material.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_object.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_object_attach.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_performancecounter.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_phantom.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_physics.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_polygon.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_radar.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_radar_appl.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_real_object.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_solver_core_reaction.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_stat_manager_cback_con.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_surface_manager.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_templates.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_time.hxx" />
+    <ClInclude Include="..\IVP_PHYSICS\ivp_time_event.hxx" />
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_compact_grid.hxx" />
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_compact_surface.hxx" />
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_gridbuild_array.hxx" />
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_surman_grid.hxx" />
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_surman_polygon.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_active_value.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_active_value_hash.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_bigvector.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_diff_hash.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_float.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_fvector.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_geometry.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_hash.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_double.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_macros.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_PIII.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_ps2.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_software.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_willamette.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_list.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_mapping.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_matrix_macros.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_memory.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_min_hash.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_min_list.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_ps2.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_quat.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_set.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_string.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_string_hash.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_types.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_vector.hxx" />
+    <ClInclude Include="..\IVP_UTILITY\ivu_vhash.hxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

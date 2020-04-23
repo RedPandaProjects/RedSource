@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>hk_math</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{9DB6619C-E27B-4409-8085-7E643021A5A7}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\SourceEngine.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\SourceEngine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>hk_math/vecmath.h</PrecompiledHeaderFile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x1809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../hk_library/win32/release\hk_math.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;_DEBUG;HK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>hk_math/vecmath.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x1809</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../hk_library/win32/debug\hk_math.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <CustomBuildStep />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="densematrix.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hk_math/vecmath.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hk_math/vecmath.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="densematrix_util.cpp" />
+    <ClCompile Include="eulerangles.cpp" />
+    <ClCompile Include="gauss_elimination\gauss_elimination.cpp" />
+    <ClCompile Include="incr_lu\incr_lu.cpp" />
+    <ClCompile Include="lcp\lcp_solver.cpp" />
+    <ClCompile Include="math.cpp" />
+    <ClCompile Include="matrix3.cpp" />
+    <ClCompile Include="odesolve.cpp" />
+    <ClCompile Include="plane.cpp" />
+    <ClCompile Include="quaternion\quaternion.cpp" />
+    <ClCompile Include="quaternion\quaternion_util.cpp" />
+    <ClCompile Include="rotation.cpp" />
+    <ClCompile Include="spatial_matrix.cpp" />
+    <ClCompile Include="spatial_vector.cpp" />
+    <ClCompile Include="transform.cpp" />
+    <ClCompile Include="vector3\vector3.cpp" />
+    <ClCompile Include="vector3\vector3_util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="densematrix.h" />
+    <ClInclude Include="densematrix_util.h" />
+    <ClInclude Include="dense_vector.h" />
+    <ClInclude Include="eulerangles.h" />
+    <ClInclude Include="gauss_elimination\gauss_elimination.h" />
+    <ClInclude Include="incr_lu\incr_lu.h" />
+    <ClInclude Include="interval.h" />
+    <ClInclude Include="lcp\lcp_solver.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="matrix3.h" />
+    <ClInclude Include="matrix\matrix_inverter.h" />
+    <ClInclude Include="odesolve.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="qtransform.h" />
+    <ClInclude Include="quaternion\quaternion.h" />
+    <ClInclude Include="quaternion\quaternion_util.h" />
+    <ClInclude Include="ray.h" />
+    <ClInclude Include="rotation.h" />
+    <ClInclude Include="spatial_matrix.h" />
+    <ClInclude Include="spatial_vector.h" />
+    <ClInclude Include="transform.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="vecmath.h" />
+    <ClInclude Include="vector3\vector3.h" />
+    <ClInclude Include="vector3\vector3_util.h" />
+    <ClInclude Include="vector4.h" />
+    <ClInclude Include="vector_fpu\vector_fpu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="densematrix.inl" />
+    <CustomBuild Include="densematrix_util.inl" />
+    <CustomBuild Include="dense_vector.inl" />
+    <CustomBuild Include="math.inl" />
+    <CustomBuild Include="matrix3.inl" />
+    <CustomBuild Include="plane.inl" />
+    <CustomBuild Include="qtransform.inl" />
+    <CustomBuild Include="quaternion\quaternion.inl" />
+    <CustomBuild Include="ray.inl" />
+    <CustomBuild Include="rotation.inl" />
+    <CustomBuild Include="spatial_matrix.inl" />
+    <CustomBuild Include="spatial_vector.inl" />
+    <CustomBuild Include="transform.inl" />
+    <CustomBuild Include="vector3\vector3.inl" />
+    <CustomBuild Include="vector3\vector3_util.inl" />
+    <CustomBuild Include="vector4.inl" />
+    <CustomBuild Include="vector_fpu\vector_fpu.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

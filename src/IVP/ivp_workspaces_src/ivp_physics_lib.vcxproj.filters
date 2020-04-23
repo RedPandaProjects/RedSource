@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IVP_COLLISION">
+      <UniqueIdentifier>{0efd78c2-58e4-4bc8-9afb-dabc6acff170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_CONTROLLER">
+      <UniqueIdentifier>{f1cb51ce-59e3-4791-bb70-1243bcdd50ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_INTERN">
+      <UniqueIdentifier>{535dd22a-b2bd-45ce-99ed-f1ea60189b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_PHYSICS">
+      <UniqueIdentifier>{b617473f-0942-4103-9ae7-6ee0478c663d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_SURFACEMANAGER">
+      <UniqueIdentifier>{df7da373-a2c5-4c21-894f-fdb2e42a59ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IVP_UTILITY">
+      <UniqueIdentifier>{dab8390e-5cc9-4455-badb-0d5b3f870429}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Ivp_collision\ivp_3d_solver.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_longrange.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_lrange_hash.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_clustering_visual_hash.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IVP_COLLISION\ivp_clustering_visualizer.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_coll_del_root_mindist.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_collision_filter.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_compact_ledge.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_compact_ledge_solver.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_i_collision_vhash.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_debug.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_event.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_mcases.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_minimize.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_mindist_recursive.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_oo_watcher.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_range_manager.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_collision\ivp_ray_solver.cxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_actuator.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_actuator_spring.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_buoyancy_solver.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_car_system.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_constraint.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_car.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_fixed_keyed.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_constraint_local.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ivp_controller\ivp_controller_airboat.cpp">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_buoyancy.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_floating.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_motion.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_raycast_car.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_stiff_spring.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_controller_world_frict.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_forcefield.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_multidimensional_interp.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_controller\ivp_template_constraint.cxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_ball.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_calc_next_psi_solver.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_controller_phantom.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_core.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_environment.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_friction.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_friction_gaps.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_great_matrix.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_hull_manager.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_i_friction_hash.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_i_object_vhash.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_impact.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_merge_core.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_mindist_friction.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_object.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_object_attach.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_physic.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_physic_private.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_polygon.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_sim_unit.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_solver_core_reaction.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_intern\ivp_time.cxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_anomaly_manager.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_betterdebugmanager.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_betterstatisticsmanager.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_cache_object.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_liquid_surface_descript.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_material.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_performancecounter.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_stat_manager_cback_con.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_surface_manager.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_physics\ivp_templates.cxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IVP_SURFACE_MANAGER\ivp_compact_surface.cxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_surface_manager\ivp_gridbuild_array.cxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_surface_manager\ivp_surman_grid.cxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_surface_manager\ivp_surman_polygon.cxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_active_value.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_bigvector.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_geometry.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_hash.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_linear.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_memory.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_min_hash.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_min_list.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_os_dep.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_quat.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_string.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_types.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_vector.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ivp_utility\ivu_vhash.cxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\IVP_COLLISION\ivp_3d_solver.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_cache_ledge_point.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_longrange.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_lrange_hash.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_visual_hash.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_clustering_visualizer.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_collision.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_collision_filter.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_compact_ledge.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_compact_ledge_solver.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_i_collision_vhash.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_listener_collision.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_event.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_intern.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_macros.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_mindist_minimize.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_range_manager.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_ray_solver.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_COLLISION\ivp_universe_manager.hxx">
+      <Filter>IVP_COLLISION</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator_info.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_actuator_spring.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_attacher_to_cores.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_buoyancy_solver.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_car_system.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_car.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_fixed_keyed.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_local.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_constraint_types.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ivp_controller\ivp_controller_airboat.h">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_buoyancy.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_floating.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_golem.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_motion.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_raycast_car.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_stiff_spring.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_controller_world_frict.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_forcefield.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_multidimensional_interp.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_CONTROLLER\ivp_template_constraint.hxx">
+      <Filter>IVP_CONTROLLER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_calc_next_psi_solver.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_friction.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_friction_solver.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_hull_manager_macros.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_i_controller_vhash.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_i_friction_hash.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_i_object_vhash.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_impact.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_merge_core.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_physic_private.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_INTERN\ivp_sim_unit.hxx">
+      <Filter>IVP_INTERN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ive_graphics.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_anomaly_manager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_auth_empty.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_authenticity.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_ball.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_betterdebugmanager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_betterstatisticsmanager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_cache_object.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_contact_situation.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_core.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_core_macros.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_debug.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_debug_manager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_environment.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_great_matrix.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_hull_manager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_liquid_surface_descript.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_hull.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_object.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_listener_psi.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_material.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_object.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_object_attach.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_performancecounter.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_phantom.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_physics.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_polygon.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_radar.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_radar_appl.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_real_object.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_solver_core_reaction.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_stat_manager_cback_con.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_surface_manager.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_templates.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_time.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_PHYSICS\ivp_time_event.hxx">
+      <Filter>IVP_PHYSICS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_compact_grid.hxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_compact_surface.hxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_gridbuild_array.hxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_surman_grid.hxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_SURFACE_MANAGER\ivp_surman_polygon.hxx">
+      <Filter>IVP_SURFACEMANAGER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_active_value.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_active_value_hash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_bigvector.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_diff_hash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_float.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_fvector.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_geometry.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_hash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_double.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_macros.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_PIII.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_ps2.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_software.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_linear_willamette.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_list.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_mapping.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_matrix_macros.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_memory.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_min_hash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_min_list.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_ps2.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_quat.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_set.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_string.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_string_hash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_types.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_vector.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IVP_UTILITY\ivu_vhash.hxx">
+      <Filter>IVP_UTILITY</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
