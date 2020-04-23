@@ -609,7 +609,7 @@ bool CSourceAppSystemGroup::Create()
 
 	// Are we running in edit mode?
 	m_bEditMode = CommandLine()->CheckParm( "-edit" );
-
+	bool bIvp_Physics = CommandLine()->CheckParm("-ivp")|| CommandLine()->CheckParm("-ivp_physics");;
 	double st = Plat_FloatTime();
 
 	AppSystemInfo_t appSystems[] = 
@@ -624,7 +624,7 @@ bool CSourceAppSystemGroup::Create()
 		{ "datacache.dll",			MDLCACHE_INTERFACE_VERSION },
 		{ "datacache.dll",			STUDIO_DATA_CACHE_INTERFACE_VERSION },
 		{ "studiorender.dll",		STUDIO_RENDER_INTERFACE_VERSION },
-		{ "vphysics.dll",			VPHYSICS_INTERFACE_VERSION },
+		{ bIvp_Physics? "VphysicsIVP.dll" :"VphysicsBullet.dll",			VPHYSICS_INTERFACE_VERSION },
 #if 0
  		{ "valve_avi.dll",			AVI_INTERFACE_VERSION },
  		{ "valve_avi.dll",			BIK_INTERFACE_VERSION },

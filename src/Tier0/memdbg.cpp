@@ -1338,4 +1338,123 @@ size_t CDbgMemAlloc::MemoryAllocFailed()
 
 #endif // _DEBUG
 
-#endif // !STEAM && !NO_MALLOC_OVERRIDE
+#else
+#include "tier0/dbg.h"
+#include "tier0/memalloc.h"
+#include "mem_helpers.h"
+struct DbgMemHeader_t
+{
+	unsigned nLogicalSize;
+	byte reserved[12];	// MS allocator always returns mem aligned on 16 bytes, which some of our code depends on
+};
+inline void* InternalMalloc(size_t nSize)
+{
+	DbgMemHeader_t* pInternalMem;
+	pInternalMem = (DbgMemHeader_t*)malloc(nSize + sizeof(DbgMemHeader_t));
+	pInternalMem->nLogicalSize = nSize;
+	return pInternalMem + 1;
+}
+
+inline void* InternalRealloc(void* pMem, size_t nNewSize)
+{
+	if (!pMem)
+		return InternalMalloc(nNewSize);
+
+	DbgMemHeader_t* pInternalMem = (DbgMemHeader_t*)pMem - 1;
+	pInternalMem = (DbgMemHeader_t*)realloc(pInternalMem, nNewSize + sizeof(DbgMemHeader_t));
+	pInternalMem->nLogicalSize = nNewSize;
+	return pInternalMem + 1;
+}
+
+inline void InternalFree(void* pMem)
+{
+	if (!pMem)
+		return;
+
+	DbgMemHeader_t* pInternalMem = (DbgMemHeader_t*)pMem - 1;
+	free(pInternalMem);
+}
+
+inline size_t InternalMSize(void* pMem)
+{
+	DbgMemHeader_t* pInternalMem = (DbgMemHeader_t*)pMem - 1;
+	return _msize(pInternalMem) - sizeof(DbgMemHeader_t);
+}
+
+class CDbgMemAlloc : public IMemAlloc
+{
+public:
+	CDbgMemAlloc() {}
+	virtual ~CDbgMemAlloc() {}
+
+	// Release versions
+	virtual void* Alloc(size_t nSize) {return InternalMalloc(nSize); }
+	virtual void* Realloc(void* pMem, size_t nSize) { return InternalRealloc(pMem, nSize); }
+	virtual void  Free(void* pMem) { InternalFree(pMem); }
+	virtual void* Expand_NoLongerSupported(void* pMem, size_t nSize) { return nullptr; }
+
+	// Debug versions
+	virtual void* Alloc(size_t nSize, const char* pFileName, int nLine) { return InternalMalloc(nSize); }
+	virtual void* Realloc(void* pMem, size_t nSize, const char* pFileName, int nLine) { return InternalRealloc(pMem, nSize); }
+	virtual void  Free(void* pMem, const char* pFileName, int nLine) { InternalFree(pMem); }
+	virtual void* Expand_NoLongerSupported(void* pMem, size_t nSize, const char* pFileName, int nLine) { return nullptr; }
+
+	// Returns size of a particular allocation
+	virtual size_t GetSize(void* pMem)
+	{
+
+		if (!pMem)
+			return CalcHeapUsed();
+
+		return InternalMSize(pMem);
+	}
+
+	// Force file + line information for an allocation
+	virtual void PushAllocDbgInfo(const char* pFileName, int nLine) {}
+	virtual void PopAllocDbgInfo() {}
+
+	virtual long CrtSetBreakAlloc(long lNewBreakAlloc) { return 0; }
+	virtual	int CrtSetReportMode(int nReportType, int nReportMode) { return 0; }
+	virtual int CrtIsValidHeapPointer(const void* pMem) { return 0; }
+	virtual int CrtIsValidPointer(const void* pMem, unsigned int size, int access) { return 0; }
+	virtual int CrtCheckMemory(void) { return 0; }
+	virtual int CrtSetDbgFlag(int nNewFlag) { return 0; }
+	virtual void CrtMemCheckpoint(_CrtMemState* pState) {}
+
+	// FIXME: Remove when we have our own allocator
+	virtual void* CrtSetReportFile(int nRptType, void* hFile) { return 0; }
+	virtual void* CrtSetReportHook(void* pfnNewHook) { return 0; }
+	virtual int CrtDbgReport(int nRptType, const char* szFile,int nLine, const char* szModule, const char* szFormat) 
+	{
+		return 0;
+	}
+
+	virtual int heapchk() { return 0; }
+
+	virtual bool IsDebugHeap() { return false; }
+
+	virtual int GetVersion() { return MEMALLOC_VERSION; }
+
+	virtual void CompactHeap()
+	{
+	}
+
+	virtual MemAllocFailHandler_t SetAllocFailHandler(MemAllocFailHandler_t pfnMemAllocFailHandler) { return NULL; } // debug heap doesn't attempt retries
+
+	virtual void DumpStats() {}
+
+	virtual void DumpBlockStats(void*) {}
+	virtual size_t MemoryAllocFailed() { return 0; }
+	virtual void GetActualDbgInfo(const char*& pFileName, int& nLine) {}
+	virtual void RegisterAllocation(const char* pFileName, int nLine, int nLogicalSize, int nActualSize, unsigned nTime) {}
+	virtual void RegisterDeallocation(const char* pFileName, int nLine, int nLogicalSize, int nActualSize, unsigned nTime) {}
+	virtual void DumpStatsFileBase(char const* pchFileBase) {}
+};
+static CDbgMemAlloc s_DbgMemAlloc CONSTRUCT_EARLY;
+
+#ifndef TIER0_VALIDATE_HEAP
+IMemAlloc* g_pMemAlloc = &s_DbgMemAlloc;
+#else
+IMemAlloc* g_pActualAlloc = &s_DbgMemAlloc;
+#endif
+#endif

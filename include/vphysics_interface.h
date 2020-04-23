@@ -1150,3 +1150,9 @@ DEFINE_PIID( IPhysicsGameTrace,			PIID_IPHYSICSGAMETRACE );
 //-----------------------------------------------------------------------------
 
 #endif // VPHYSICS_INTERFACE_H
+namespace Impl
+{
+	void not_implemented();
+}
+
+#define NOT_IMPLEMENTED Impl::not_implemented();

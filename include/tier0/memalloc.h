@@ -24,7 +24,7 @@
 // Undefine this if using a compiler lacking threadsafe RTTI (like vc6)
 #define MEM_DEBUG_CLASSNAME 1
 
-#if !defined(STEAM) && !defined(NO_MALLOC_OVERRIDE)
+#if 1
 
 #include <stddef.h>
 #include "tier0/mem.h"

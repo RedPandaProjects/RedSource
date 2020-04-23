@@ -127,6 +127,9 @@
       <PreprocessorDefinitions>GAME_DLL;HL2_DLL;USES_SAVERESTORE;WIN32;NDEBUG;SERVERHL2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>cbase.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;..\shared;..\..\common;.;hl2;..\shared\hl2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

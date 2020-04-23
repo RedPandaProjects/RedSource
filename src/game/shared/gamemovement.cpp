@@ -3724,7 +3724,7 @@ void CGameMovement::CategorizePosition( void )
 	{
 		// Try and move down.
 		TracePlayerBBox( bumpOrigin, point, MASK_PLAYERSOLID, COLLISION_GROUP_PLAYER_MOVEMENT, pm );
-		
+
 		// Was on ground, but now suddenly am not.  If we hit a steep plane, we are not on ground
 		if ( !pm.m_pEnt || pm.plane.normal[2] < 0.7 )
 		{

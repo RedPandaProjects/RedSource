@@ -127,6 +127,9 @@
       <PreprocessorDefinitions>HL2_CLIENT_DLL;CLIENT_DLL;_CRT_USE_BUILTIN_OFFSETOF;NO_STRING_T;WIN32;NDEBUG;CLIENTHL2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>cbase.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(Inc)tier0;$(Inc)tier1;..\shared;..\..\common;.;hl2;..\shared\hl2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

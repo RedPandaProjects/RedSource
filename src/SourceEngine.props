@@ -18,6 +18,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <SDLCheck>false</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <ImportLibrary>$(SolutionDir)..\lib\$(Platform)\$(Configuration)\$(TargetName)$(TargetExt)</ImportLibrary>

@@ -4554,7 +4554,6 @@ void CBasePlayer::PostThinkVPhysics( void )
 	// to UpdateVPhysicsPosition.	
 	m_vNewVPhysicsPosition = newPosition;
 	m_vNewVPhysicsVelocity = g_pMoveData->m_outWishVel;
-
 	m_oldOrigin = GetAbsOrigin();
 }
 
@@ -4569,8 +4568,8 @@ void CBasePlayer::UpdateVPhysicsPosition( const Vector &position, const Vector &
 	{
 		pPhysGround = NULL;
 	}
-
-	m_pPhysicsController->Update( position, velocity, secondsToArrival, onground, pPhysGround );
+	Vector pos = position;
+	m_pPhysicsController->Update(pos, velocity, secondsToArrival, onground, pPhysGround );
 }
 
 void CBasePlayer::UpdatePhysicsShadowToCurrentPosition()
@@ -7737,7 +7736,7 @@ void CBasePlayer::SetupVPhysicsShadow( const Vector &vecAbsOrigin, const Vector 
 	Q_strncpy( solid.surfaceprop, "player", sizeof(solid.surfaceprop) );
 	solid.params = g_PhysDefaultObjectParams;
 	solid.params.mass = 85.0f;
-	solid.params.inertia = 1e24f;
+	solid.params.inertia = 1e20f;
 	solid.params.enableCollisions = false;
 	//disable drag
 	solid.params.dragCoefficient = 0;
