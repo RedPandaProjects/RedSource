@@ -731,7 +731,9 @@ FORCEINLINE fltx4 LoadUnalignedSIMD( const float *pSIMD )
 
 FORCEINLINE fltx4 LoadUnaligned3SIMD( const float *pSIMD )
 {
-	return *( reinterpret_cast< const fltx4 *> ( pSIMD ) );
+	fltx4 result  = *( reinterpret_cast< const fltx4 *> ( pSIMD ) );
+	result.m128_f32[3] = 0;
+	return result;
 }
 
 FORCEINLINE fltx4 LoadAlignedSIMD( const float *pSIMD )

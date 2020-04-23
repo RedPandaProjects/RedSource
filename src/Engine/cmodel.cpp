@@ -4,7 +4,6 @@
 //
 // $NoKeywords: $
 //=============================================================================//
-
 #include "cmodel_engine.h"
 #include "cmodel_private.h"
 #include "dispcoll_common.h"
@@ -773,8 +772,8 @@ bool IntersectRayWithBoxBrush( TraceInfo_t *pTraceInfo, const cbrush_t *pBrush, 
 	fltx4 start = LoadUnaligned3SIMD(pTraceInfo->m_start.Base());
 	fltx4 extents = LoadUnaligned3SIMD(pTraceInfo->m_extents.Base());
 	fltx4 delta = LoadUnaligned3SIMD(pTraceInfo->m_delta.Base());
-	fltx4 boxMins = LoadAlignedSIMD( pBox->mins.Base() );
-	fltx4 boxMaxs = LoadAlignedSIMD( pBox->maxs.Base() );
+	fltx4 boxMins = LoadUnaligned3SIMD( pBox->mins.Base() );
+	fltx4 boxMaxs = LoadUnaligned3SIMD( pBox->maxs.Base() );
 
 	// compute the mins/maxs of the box expanded by the ray extents
 	// relocate the problem so that the ray start is at the origin.
